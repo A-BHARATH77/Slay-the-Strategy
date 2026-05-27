@@ -3,96 +3,145 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black text-white pt-10 pb-0 px-4 md:px-8 lg:px-12 relative">
-      <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row justify-between mb-16">
-          {/* Logo and Copyright */}
-          <div className="mb-8 lg:mb-0">
-            <Link href="/">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-32 h-32 rounded-md flex items-center justify-center">
-                  <Image
-                    src="/smlogo.png"
-                    alt="Social Moodboard Logo"
-                    height={1500}
-                    width={1500}
-                  />
-                </div>
-                <span className="text-4xl font-['Gilda_Display']">
-                  We don&apos;t do <span className="italic text-red-600">Ordinary.</span>
-                </span>
-              </div>
-            </Link>
-            <p className="text-sm text-gray-400">© copyright Social Moodboard 2025. All rights reserved.</p>
+    <footer className="relative w-full overflow-hidden" style={{ minHeight: "520px" }}>
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/footer.png"
+          alt="Footer background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Light overlay so text is readable */}
+        <div className="absolute inset-0 bg-[#f7f2e6]/70" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-between h-full px-6 md:px-12 pt-20 pb-8" style={{ minHeight: "520px" }}>
+
+        {/* ── Center CTA block ── */}
+        <div className="flex flex-col items-center text-center gap-6 max-w-[600px]">
+          {/* Logo row */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 relative">
+              <Image src="/logo.webp" alt="Slay the Strategy" fill className="object-contain" />
+            </div>
+            <span className="text-[#516856] text-sm font-medium font-['Gilda_Display'] tracking-wide">
+              Slay the Strategy
+            </span>
           </div>
-          
-          {/* Navigation Columns */}
-          <div className="grid grid-cols-3 gap-8 lg:gap-16">
-            {/* Pages Column */}
-            <div>
-              <h3 className="text-lg font-medium mb-6">Pages</h3>
-              <ul className="space-y-4">
-                <li><Link href="/services" className="hover:text-gray-300">Services</Link></li>
-                <li><Link href="/works" className="hover:text-gray-300">Works</Link></li>
-                <li><Link href="/about" className="hover:text-gray-300">About</Link></li>
-                <li><Link href="/contact" className="hover:text-gray-300">Contact</Link></li>
-              </ul>
-            </div>
-            
-            {/* Socials Column */}
-            <div>
-              <h3 className="text-lg font-medium mb-6">Socials</h3>
-              <ul className="space-y-4">
-                <li>
-                  <Link 
-                    href="https://www.facebook.com/profile.php?id=61573787330753" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-300"
-                  >
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="https://www.instagram.com/socialmooodboard/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-300"
-                  >
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="https://www.linkedin.com/in/vishishta-banerjee-9652ba198/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-300"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Legal Column */}
-            <div>
-              <h3 className="text-lg font-medium mb-6">Legal</h3>
-              <ul className="space-y-4">
-                <li><Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service" className="hover:text-gray-300">Terms of Service</Link></li>
-              </ul>
-            </div>
+
+          {/* Heading */}
+          <h2 className="text-5xl md:text-6xl font-normal leading-[1.1] tracking-tight text-[#516856] font-['Gilda_Display']">
+            Let&apos;s move forward<br />
+            with <span className="text-[#516856]">clarity.</span>
+          </h2>
+
+          {/* Subtitle */}
+          <p className="text-[#516856]/65 text-base leading-relaxed font-['Gilda_Display'] max-w-sm">
+            Share your goals, and we&apos;ll help shape the direction and guide your brand forward with clarity and care.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-3 mt-2">
+            <Link
+              href="/contact"
+              className="px-7 py-3 rounded-full bg-[#516856] text-[#f7f2e6] text-sm font-medium font-['Gilda_Display'] hover:bg-[#3f5444] transition-colors duration-200"
+            >
+              Book a Call
+            </Link>
+            <Link
+              href="mailto:hello@slaythestrategy.com"
+              className="px-7 py-3 rounded-full bg-[#f7f2e6]/80 border border-[#516856]/30 text-[#516856] text-sm font-medium font-['Gilda_Display'] hover:bg-[#f7f2e6] transition-colors duration-200"
+            >
+              Email Us
+            </Link>
           </div>
         </div>
-        
-        {/* Large DevStudio text at bottom with full width */}
-        <div className="w-full mt-16 pb-32 overflow-hidden">
-          <h1 className="text-3xl text-center md:text-7xl lg:text-8xl font-bold text-gray-600 opacity-30 leading-none">
-            SOCIAL <br /> MOODBOARD
-          </h1>
+
+        {/* ── Link columns ── */}
+        <div className="w-full max-w-2xl grid grid-cols-3 gap-8 mt-16">
+          {/* Navigation */}
+          <div>
+            <p className="text-[#516856]/50 text-xs font-medium uppercase tracking-widest mb-4 font-['Gilda_Display']">
+              Navigation
+            </p>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { label: "Home", href: "/" },
+                { label: "Works", href: "/works" },
+                { label: "About Us", href: "/about" },
+                { label: "Contact", href: "/contact" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[#516856]/75 hover:text-[#516856] text-sm font-['Gilda_Display'] underline-offset-2 hover:underline transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div>
+            <p className="text-[#516856]/50 text-xs font-medium uppercase tracking-widest mb-4 font-['Gilda_Display']">
+              Connect
+            </p>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { label: "Instagram", href: "https://www.instagram.com/slaythestrategy/" },
+                { label: "LinkedIn", href: "https://www.linkedin.com/in/vishishta-banerjee-9652ba198/" },
+                { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61573787330753" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#516856]/75 hover:text-[#516856] text-sm font-['Gilda_Display'] underline-offset-2 hover:underline transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <p className="text-[#516856]/50 text-xs font-medium uppercase tracking-widest mb-4 font-['Gilda_Display']">
+              Legal
+            </p>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Service", href: "/terms-of-service" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[#516856]/75 hover:text-[#516856] text-sm font-['Gilda_Display'] underline-offset-2 hover:underline transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* ── Bottom bar ── */}
+        <div className="w-full flex items-center justify-between mt-10 pt-4 border-t border-[#516856]/15">
+          <p className="text-[#516856]/50 text-xs font-['Gilda_Display']">
+            © Slay the Strategy 2025. All rights reserved.
+          </p>
+          <p className="text-[#516856]/50 text-xs font-['Gilda_Display']">
+            Crafted with intention.
+          </p>
         </div>
       </div>
     </footer>

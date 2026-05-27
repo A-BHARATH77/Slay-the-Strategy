@@ -52,11 +52,11 @@ export default function Navbar() {
           // Handle the logo item differently with increased size
           if (item.id === "logo") {
             return (
-              <div key={item.id} className="flex justify-center -mt-8">
+              <div key={item.id} className="flex justify-center pt-2">
                 <Link href="/" className="flex items-center">
-                  <div className="w-40 h-40 relative">
+                  <div className="w-20 h-20 relative">
                     <Image
-                      src="/smlogo.png"
+                      src="/logo.webp"
                       alt="Logo"
                       fill
                       priority
@@ -82,7 +82,7 @@ export default function Navbar() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className={`flex items-center px-2 py-1 ${
-                    isActive ? "text-white" : "text-gray-300 hover:text-white"
+                    isActive ? "text-[#516856]" : "text-[#516856]/70 hover:text-[#516856]"
                   }`}
                 >
                   {IconComponent && <IconComponent size={16} className="mr-1" />}
@@ -90,7 +90,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 w-full h-0.5 bg-white"
+                      className="absolute -bottom-1 w-full h-0.5 bg-[#516856]"
                       transition={{ duration: 0.3 }}
                     />
                   )}

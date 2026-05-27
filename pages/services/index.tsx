@@ -4,7 +4,8 @@ import { Instagram, Linkedin, ChevronRight, X, Facebook } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Ready } from "@/components";
+import Expertise from "@/components/Expertise";
+
 
 // Define types for our data structures
 
@@ -243,12 +244,12 @@ const ReviewCard = ({ name, description }: Pick<Testimonial, 'name' | 'descripti
     <figure className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white dark:text-white">
+          <figcaption className="text-sm font-medium text-[#516856] dark:text-[#516856]">
             {name}
           </figcaption>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm text-white">{description}</blockquote> 
+      <blockquote className="mt-2 text-sm text-[#516856]">{description}</blockquote> 
     </figure>
   );
 };
@@ -295,14 +296,14 @@ const TestimonialSection = () => {
   return (
     <div className="relative flex h-auto w-full flex-col items-center font-['Gilda_Display'] bg-black justify-center overflow-hidden rounded-lg border  md:shadow-xl">
       <div className="mx-auto max-w-4xl p-4 text-center sm:py-14">
-        <h2 className="mb-3 text-4xl font-['Gilda_Display'] text-white dark:text-white md:text-lg">
+        <h2 className="mb-3 text-4xl font-['Gilda_Display'] text-[#516856] dark:text-[#516856] md:text-lg">
           Empowering
           <br />
           <span className="bg-red-700 bg-clip-text text-transparent italic">
             Individuals & Businesses
           </span>
         </h2>
-        <p className="text-2xl p-7 text-white italic dark:text-white md:text-xl">
+        <p className="text-2xl p-7 text-[#516856] italic dark:text-[#516856] md:text-xl">
           &ldquo;Ordinary doesn&apos;t live here. We craft the extraordinary, one bold idea at a time.&rdquo;
         </p>
       </div>
@@ -345,11 +346,11 @@ const ServicePopup = ({
         <div className="bg-gradient-to-r from-red-800 to-red-950 p-6 relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+            className="absolute top-4 right-4 text-[#516856]/70 hover:text-[#516856] transition-colors"
           >
             <X size={24} />
           </button>
-          <h3 className="font-['Gilda_Display'] text-3xl text-white">{service.title}</h3>
+          <h3 className="font-['Gilda_Display'] text-3xl text-[#516856]">{service.title}</h3>
         </div>
 
         {/* Bulletins section */}
@@ -359,7 +360,7 @@ const ServicePopup = ({
             {service.bulletins.map((item, index) => (
               <li key={index} className="flex items-start gap-3">
                 <div className="mt-1 h-4 w-4 rounded-full bg-red-500 flex-shrink-0"></div>
-                <p className="font-['Gilda_Display'] text-lg text-white">{item}</p>
+                <p className="font-['Gilda_Display'] text-lg text-[#516856]">{item}</p>
               </li>
             ))}
           </ul>
@@ -405,122 +406,44 @@ export default function About() {
 
   return (
     <>
-      <section className="w-full bg-[#494949] py-32 px-8 sm:px-12 lg:px-16 relative overflow-hidden">
+      <section className="w-full bg-[#f7f2e6] py-32 px-8 sm:px-12 lg:px-16 relative overflow-hidden">
         {/* Refined background elements with reduced opacity */}
 
         {/* Header Section - Added more vertical spacing */}
         <div className="text-center max-w-4xl mx-auto relative z-10 mb-40">
         <div className="mb-12">
-          <span className="px-6 py-2 bg-[#494949] tracking-tight font-bold rounded-full text-sm text-white opacity-100 border border-gray-800 uppercase">
+          <span className="px-6 py-2 bg-[#f7f2e6] tracking-tight font-bold rounded-full text-sm text-[#516856] opacity-100 border border-gray-800 uppercase">
             Elevate Your Digital Presence
           </span>
         </div>
 
-        <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-white opacity-100 text-center">
+        <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#516856] opacity-100 text-center">
   Welcome to
-  <span className="block sm:inline text-red-600 italic"> Social Moodboard</span>
+  <span className="block sm:inline text-[#516856]"> Social Moodboard</span>
 </h1>
 
-          <p className="text-white opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
+          <p className="text-[#516856] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
             We craft bespoke social media strategies, visual identities, optimization solutions, and forward-thinking digital strategies that elevate your brand&apos;s presence.
           </p>
 
           <div className="mt-16 flex flex-wrap justify-center gap-8">
             <Link
               href="/contact"
-              className="px-10 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-light rounded-full hover:shadow-lg hover:translate-y-px transition-all duration-300 flex items-center gap-2 font-['Gilda_Display']"
+              className="px-10 py-4 bg-gradient-to-r from-red-600 to-red-700 text-[#516856] font-light rounded-full hover:shadow-lg hover:translate-y-px transition-all duration-300 flex items-center gap-2 font-['Gilda_Display']"
             >
               Start a Project <ChevronRight size={16} />
             </Link>
             <Link
               href="/services"
-              className="px-10 py-4 bg-[#494949] text-white opacity-100 font-light rounded-full hover:bg-gray-600 transition-all duration-300 border border-gray-800 shadow-sm font-['Gilda_Display']"
+              className="px-10 py-4 bg-[#f7f2e6] text-[#516856] opacity-100 font-light rounded-full hover:bg-gray-600 transition-all duration-300 border border-gray-800 shadow-sm font-['Gilda_Display']"
             >
               Explore Services
             </Link>
           </div>
         </div>
 
-        {/* Services Section - With Images */}
-        <div id="services" className="w-full max-w-6xl mx-auto relative z-10 mb-40">
-          <h2 className="text-6xl font-normal mb-24 text-center font-['Gilda_Display'] text-white opacity-100">
-            Our Expertise
-          </h2>
-
-          {/* Alternating image layout for services */}
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} mb-32 last:mb-0 items-center`}
-            >
-              {/* Image Section */}
-              <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'} mb-12 lg:mb-0`}>
-                <div className="relative">
-                  <div
-                    className="absolute inset-0 bg-gray-800/5 rounded-2xl transform -rotate-3 scale-95"
-                    style={{
-                      borderLeft: index % 2 === 0 ? `4px solid ${service.color}` : 'none',
-                      borderRight: index % 2 === 1 ? `4px solid ${service.color}` : 'none'
-                    }}
-                  ></div>
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                    <Image
-                      src={service.src}
-                      alt={service.title}
-                      width={600}
-                      height={450}
-                      className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105 opacity-100"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pl-12' : 'lg:pr-12'}`}>
-                <div className="w-16 h-0.5 mb-10" style={{ backgroundColor: service.color }}></div>
-                <h3 className="text-5xl font-normal mb-8 text-red-600 opacity-100 font-['Gilda_Display']">
-                  {service.title}
-                </h3>
-                <p className="text-white opacity-100 font-light text-lg leading-relaxed mb-8 font-['Gilda_Display']">
-                  {service.description}
-                </p>
-
-                {/* Added bulletins in a clean, elegant format */}
-                <div className="mb-8">
-                  <h4 className="text-red-400 mb-4 font-['Gilda_Display'] text-lg">Services Include:</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {service.bulletins.slice(0, 4).map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-white/80">
-                        <div className="h-2 w-2 rounded-full bg-red-500"></div>
-                        <span className="font-['Gilda_Display'] text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {service.bulletins.length > 4 && (
-                    <div className="mt-2 text-white/60 text-sm font-['Gilda_Display']">
-                      +{service.bulletins.length - 4} more services
-                    </div>
-                  )}
-                </div>
-
-                <button
-                  onClick={() => openPopup(service.id)}
-                  className="inline-flex items-center gap-2 text-white hover:text-red-500 font-['Gilda_Display'] group/link transition-all duration-300"
-                >
-                  <span>Discover More</span>
-                  <ChevronRight size={16} className="transition-transform duration-300 group-hover/link:translate-x-1" />
-                </button>
-
-                {/* Render popup conditionally */}
-                <ServicePopup
-                  service={service}
-                  isOpen={activePopup === String(service.id)}
-                  onClose={closePopup}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Services Section */}
+        <Expertise />
 
         {/* Added Testimonial Section */}
         <div className="w-full max-w-6xl mx-auto relative z-10 mb-40">
@@ -530,7 +453,7 @@ export default function About() {
 
         {/* Social Links Section - More elegant spacing */}
         <div className="pt-24 border-t border-gray-400 relative z-10">
-          <h2 className="text-2xl font-normal mb-16 text-center font-['Gilda_Display'] text-white opacity-100">
+          <h2 className="text-2xl font-normal mb-16 text-center font-['Gilda_Display'] text-[#516856] opacity-100">
             Connect With Us
           </h2>
 
@@ -541,7 +464,7 @@ export default function About() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-white opacity-40 hover:text-red-400 font-light transition-all duration-300 gap-2"
+                className="flex items-center text-[#516856] opacity-40 hover:text-red-400 font-light transition-all duration-300 gap-2"
               >
                 {item.icon}
                 <span>{item.title}</span>
@@ -551,7 +474,7 @@ export default function About() {
         </div>
       </section>
       <div>
-        <Ready />
+
       </div>
     </>
   );

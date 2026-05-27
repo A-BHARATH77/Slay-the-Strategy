@@ -11,9 +11,9 @@ export default function Faq() {
 	};
 
 	return (
-		<section className="w-full h-full bg-[#494949]">
-		<div className="w-full pt-10 max-w-4xl mx-auto px-10 py-20 bg-black text-white rounded-3xl shadow-xl border border-gray-800">
-			<h1 className="text-4xl font-extrabold text-center text-gray-100 mb-14 bg-[#494949]tracking-wide">
+		<section className="w-full h-full bg-[#f7f2e6]">
+		<div className="w-full pt-10 max-w-4xl mx-auto px-10 py-20 bg-black text-[#516856] rounded-3xl shadow-xl border border-gray-800">
+			<h1 className="text-4xl font-extrabold text-center text-gray-100 mb-14 bg-[#f7f2e6]tracking-wide">
 				Frequently Asked Questions
 			</h1>
 			<div className="space-y-8">
@@ -21,7 +21,7 @@ export default function Faq() {
 					<div key={item.id} className="border-b border-gray-700 pb-6">
 						<button
 							onClick={() => toggleAccordion(item.id)}
-							className="w-full flex justify-between items-center text-2xl font-medium text-gray-300 hover:text-white transition-all duration-300"
+							className="w-full flex justify-between items-center text-2xl font-medium text-gray-300 hover:text-[#516856] transition-all duration-300"
 						>
 							<span>{item.question}</span>
 							{activeAccordion === item.id ? (

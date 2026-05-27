@@ -1,250 +1,125 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-
-
-export default function Clients() {
-  return (
-    <section className="padding-y">
-      <Testimonial />
-    </section>
-  );
-}
-
-const Testimonial = () => {
-  return (
-    <div className="relative flex h-auto w-full flex-col items-center font-['Gilda_Display'] justify-center overflow-hidden rounded-lg border bg-black md:shadow-xl">
-      <div className="mx-auto max-w-4xl p-4 text-center sm:py-14">
-      <h2 className="mb-3 text-4xl font-['Gilda_Display'] text-white dark:text-white md:text-lg">
-  Empowering
-  <br />
-  <span className="bg-red-700 bg-clip-text text-transparent italic">
-    Individuals & Businesses
-  </span>
-</h2>
-        <p className="text-2xl p-7 text-white italic dark:text-white md:text-xl">
-        "Ordinary doesn't live here. We craft the extraordinary, one bold idea at a time."
-        </p>
-      </div>
-
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.email} {...review} />
-        ))}
-      </Marquee> 
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.email} {...review} />
-        ))}
-      </Marquee>
-     
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black dark:from-black"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black dark:from-black"></div>
-      
-
-      
-      <div className="bg-slate-500">
-      <LogoCloud />
-      </div>
-      {/* Client logos placed below testimonials */}
-     
-    </div>
-  );
-};
-
-const ReviewCard = ({ img, name, email, description }: any) => {
-  return (
-    <figure
-      className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
-    >
-      <div className="flex flex-row items-center gap-2">
-       
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white dark:text-white">
-            {name}
-          </figcaption>
-         
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm text-white">{description}</blockquote> 
-    </figure>
-  );
-};
-
-const LogoCloud = () => {
-  const logos = [
-    {
-      name: "Babel",
-      url: "/l1.png",
-    },
-    {
-      name: "Ngrok",
-      url: "/l5.png",
-    },
-    {
-      name: "Webflow",
-      url: "/l12.png",
-    },
-    {
-      name: "Perplexity",
-      url: "/l9.png",
-    },
-    {
-      name: "Sanity",
-      url: "/l2.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l3.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l7.png",
-    },  
-    {
-      name: "Post CSS",
-      url: "/l8.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l6.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l10.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l11.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l8.png",
-    },
-    {
-      name: "Post CSS",
-      url: "/l4.png",
-    },
-  ];
-  
-  return (
-    <div className="w-full py-12 pt-10 pb-20">
-      <div className="mx-auto pt-10 w-full px-2 md:px-4">
-        <div
-          className="group relative mt-6 flex gap-6 overflow-hidden p-2"
-          style={{
-            maskImage:
-              "linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)",
-          }}
-        >
-          {Array(5)
-            .fill(null)
-            .map((_, index) => (
-              <div
-                key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
-              >
-                {logos.map((logo, key) => (
-                  <img
-                    key={key}
-                    src={logo.url}
-                    className="h-28 w-42 px-2"
-                    alt={logo.name}
-                  />
-                ))}
-              </div>
-            ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
+import Image from "next/image";
 
 const testimonials = [
   {
     name: "Prassana",
-    email: "johndoe23@gmail.com",
-    description: "Absolutely thrilled with Social Moodboard's service! They captured my brand's voice perfectly, crafted engaging content, and boosted my social media presence with professionalism, creativity, and strategic flair. A big thumbs up and 5 stars from me!",
-    img: "https://img.freepik.com/free-photo/brunette-girl-posing_23-2148108748.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
+    role: "Founder, Prassana Brands",
+    description:
+      "Working with Slay the Strategy was seamless. Their process is structured, focused, and respectful of time, which made collaboration easy and effective.",
+    img: "https://img.freepik.com/free-photo/brunette-girl-posing_23-2148108748.jpg",
+    rating: 5,
   },
   {
     name: "JZ Lake View",
-    email: "alexjohnson@gmail.com",
-    description: "Partnering with Social Moodboard has elevated JZ's brand with creative, engaging content. Their fresh ideas and dedication have boosted our online presence and audience connection.",
-    img: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
+    role: "Manager, JZ Lake View",
+    description:
+      "Slay the Strategy brought a level of clarity to our project that made the entire process feel smooth and well organised. Every stage was handled with care.",
+    img: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg",
+    rating: 5,
   },
   {
-    name: "Yogita Dalvi, KDBS",
-    email: "emilydavis@gmail.com",
-    description: "We had a pleasant experience working with Vishishta for handling our social media handle. Her promptness and creativity is adorable!",
-    img: "https://img.freepik.com/free-photo/smiling-asian-woman_23-2147766303.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
+    name: "Yogita Dalvi",
+    role: "Director, KDBS",
+    description:
+      "From strategy to execution, everything was handled with precision and care. The final product feels refined and built to last.",
+    img: "https://img.freepik.com/free-photo/smiling-asian-woman_23-2147766303.jpg",
+    rating: 5,
   },
   {
-    name: "Brew Merchant Café & Bar",
-    email: "michaelbrown@gmail.com",
-    description: "Working with Social Moodboard has been a total game-changer for us. Vishishta just *gets it*—she brings clarity, creativity, and structure to every campaign. From strategy to execution, everything feels intentional and aligned with our brand.",
-    img: "https://img.freepik.com/free-photo/portrait-modern-man_23-2147960990.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
+    name: "Brew Merchant Café",
+    role: "Owner, Brew Merchant Café & Bar",
+    description:
+      "Vishishta just gets it — she brings clarity, creativity, and structure to every campaign. Everything feels intentional and aligned with our brand.",
+    img: "https://img.freepik.com/free-photo/portrait-modern-man_23-2147960990.jpg",
+    rating: 5,
   },
   {
-    name: "Founder, Echo Bowl",
-    email: "sarahmiller@gmail.com",
-    description: "Vishishta is a powerhouse. She leads with insight, understands the pulse of the audience, and never delivers anything mediocre. The Social Moodboard team has helped us show up with consistency, edge, and style.",
-    img: "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
+    name: "Echo Bowl",
+    role: "Founder, Echo Bowl",
+    description:
+      "The Social Moodboard team has helped us show up with consistency, edge, and style. Vishishta leads with insight and never delivers anything mediocre.",
+    img: "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg",
+    rating: 4,
   },
   {
-    name: "Owner, Chill House Interiors",
-    description: "We came to Social Moodboard for content support, and stayed for the energy, professionalism, and genuine passion. Vishishta's strategies are sharp and rooted in what actually works. She treats our brand like her own.",
-    img: "https://img.freepik.com/premium-photo/woman-wearing-glasses-yellow-shirt-is-wearing-yellow-shirt_911060-133057.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "Bloomhaus Interiors",
-    description: "We were stuck with repetitive content until Vishishta came in with her magic. Within 2 months, our engagement went up 4x. If you want someone who brings strategy and taste, this is it.",
-    img: "/api/placeholder/400/400",
-  },
-  {
-    name: "Layla Hair Studio",
-    description: "Social Moodboard helped us launch from scratch and build a full vibe. From brand voice to reel ideas—every detail was intentional and so us. Vishishta brings confidence and calm to the chaos.",
-    img: "/api/placeholder/400/400",
+    name: "Chill House Interiors",
+    role: "Owner, Chill House Interiors",
+    description:
+      "We came for content support and stayed for the energy, professionalism, and genuine passion. Vishishta's strategies are sharp and rooted in what actually works.",
+    img: "https://img.freepik.com/premium-photo/woman-wearing-glasses-yellow-shirt_911060-133057.jpg",
+    rating: 5,
   },
 ];
 
-const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 3));
-const secondRow = testimonials.slice(
-  Math.ceil(testimonials.length / 3),
-  2 * Math.ceil(testimonials.length / 3),
+// ── Star rating component ──
+const Stars = ({ count }: { count: number }) => (
+  <div className="flex gap-1 mb-4">
+    {[1, 2, 3, 4, 5].map((i) => (
+      <span
+        key={i}
+        className={`text-lg ${i <= count ? "text-yellow-400" : "text-[#516856]/20"}`}
+      >
+        ★
+      </span>
+    ))}
+  </div>
 );
-const thirdRow = testimonials.slice(2 * Math.ceil(testimonials.length / 3));
- 
+
+// ── Single card ──
+const ReviewCard = ({ name, role, description, img, rating }: any) => (
+  <figure className="w-72 flex-shrink-0 rounded-2xl bg-[#fdf8ee] border border-[#e8dfc8] p-6 flex flex-col justify-between shadow-sm mx-3">
+    <div>
+      <Stars count={rating} />
+      <blockquote className="text-[#516856]/85 text-sm leading-relaxed font-['Gilda_Display']">
+        &ldquo;{description}&rdquo;
+      </blockquote>
+    </div>
+    <div className="flex items-center gap-3 mt-6">
+      <div className="w-10 h-10 rounded-full overflow-hidden relative flex-shrink-0 bg-[#516856]/10">
+        <img
+          src={img}
+          alt={name}
+          className="w-full h-full object-cover"
+          onError={(e: any) => {
+            e.target.style.display = "none";
+          }}
+        />
+      </div>
+      <div>
+        <p className="text-sm font-semibold text-[#516856] font-['Gilda_Display']">{name}</p>
+        <p className="text-xs text-[#516856]/55 font-['Gilda_Display']">{role}</p>
+      </div>
+    </div>
+  </figure>
+);
+
+// ── Marquee ──
 interface MarqueeProps {
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;
   children?: React.ReactNode;
-  vertical?: boolean;
   repeat?: number;
   [key: string]: any;
 }
- 
+
 function Marquee({
   className,
   reverse,
   pauseOnHover = false,
   children,
-  vertical = false,
-  repeat = 4,
+  repeat = 3,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
-        {
-          "flex-row": !vertical,
-          "flex-col": vertical,
-        },
+        "group flex overflow-hidden [--duration:40s] [--gap:0rem] [gap:var(--gap)]",
+        "flex-row",
         className
       )}
     >
@@ -254,8 +129,7 @@ function Marquee({
           <div
             key={i}
             className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
+              "animate-marquee flex-row": true,
               "group-hover:[animation-play-state:paused]": pauseOnHover,
               "[animation-direction:reverse]": reverse,
             })}
@@ -264,5 +138,53 @@ function Marquee({
           </div>
         ))}
     </div>
+  );
+}
+
+// ── Main component ──
+export default function Clients() {
+  return (
+    <section className="bg-[#f7f2e6] py-20 overflow-hidden">
+      {/* Header */}
+      <div className="text-center mb-12 px-4">
+        <div className="inline-flex mb-5">
+          <span className="px-4 py-1.5 text-xs font-medium text-[#516856] border border-[#516856]/30 rounded-full font-['Gilda_Display']">
+            Testimonials
+          </span>
+        </div>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#516856] font-['Gilda_Display'] leading-tight max-w-xl mx-auto">
+          Trusted by teams who value quality.
+        </h2>
+      </div>
+
+      {/* Scrolling cards row — fade edges */}
+      <div className="relative">
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10"
+          style={{
+            background: "linear-gradient(to right, #f7f2e6, transparent)",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10"
+          style={{
+            background: "linear-gradient(to left, #f7f2e6, transparent)",
+          }}
+        />
+        <Marquee pauseOnHover>
+          {testimonials.map((t) => (
+            <ReviewCard key={t.name} {...t} />
+          ))}
+        </Marquee>
+      </div>
+
+      {/* Bottom stat */}
+      <div className="text-center mt-10">
+        <p className="text-sm text-[#516856]/65 font-['Gilda_Display']">
+          <span className="text-[#516856] font-semibold">+200</span>{" "}
+          projects delivered across growing companies.
+        </p>
+      </div>
+    </section>
   );
 }

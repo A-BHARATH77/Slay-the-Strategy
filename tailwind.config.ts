@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#f1f1f1",
-        secondry: "#212121",
+        background: "#f7f2e6",
+        secondry: "#516856",
         marquee: "#004d43",
         about: "#cdea68",
       },

@@ -5,7 +5,7 @@ import { Target, TrendingUp, Users, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Curve } from "@/components";
-import { Ready } from "@/components";
+
 import { cn } from "@/lib/utils";
 
 // NumberTicker Component
@@ -49,7 +49,7 @@ const NumberTicker = ({
   return (
     <span
       className={cn(
-        "inline-block tabular-nums tracking-wider text-white",
+        "inline-block tabular-nums tracking-wider text-[#516856]",
         className
       )}
       ref={ref}
@@ -62,23 +62,23 @@ const StatsSection = () => {
   return (
     <div className="mx-auto mt-14 pt-10 pb-12 grid max-w-5xl grid-cols-1 md:grid-cols-3 gap-8 px-6">
       {/* Reach Stat */}
-      <div className="relative bg-black rounded-xl text-white p-6 border border-gray-200 shadow-lg">
+      <div className="relative bg-black rounded-xl text-[#516856] p-6 border border-gray-200 shadow-lg">
         <div className="absolute top-0 right-0 p-3">
           <Users className="size-10 text-gray-300" />
         </div>
         <div className="flex flex-col">
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold text-white">
+            <span className="text-4xl font-bold text-[#516856]">
               <NumberTicker value={10} />M+
             </span>
           </div>
-          <div className="mt-3 text-white font-medium text-lg">
+          <div className="mt-3 text-[#516856] font-medium text-lg">
             Combined Reach
           </div>
-          <p className="mt-1 text-sm text-white">
+          <p className="mt-1 text-sm text-[#516856]">
             Across all digital campaigns and platforms
           </p>
-          <div className="group mt-4 flex cursor-pointer items-center gap-2 text-sm text-white hover:text-black">
+          <div className="group mt-4 flex cursor-pointer items-center gap-2 text-sm text-[#516856] hover:text-[#516856]">
           </div>
         </div>
       </div>
@@ -89,38 +89,38 @@ const StatsSection = () => {
         </div>
         <div className="flex flex-col">
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold text-white">
+            <span className="text-4xl font-bold text-[#516856]">
               <NumberTicker value={20} />+
             </span>
           </div>
-          <div className="mt-3 text-white font-medium text-lg">
+          <div className="mt-3 text-[#516856] font-medium text-lg">
             Elevated Brands
           </div>
-          <p className="mt-1 text-sm text-white">
+          <p className="mt-1 text-sm text-[#516856]">
             With powerful content series and campaigns
           </p>
-          <div className="group mt-4 flex cursor-pointer items-center gap-2 text-sm text-white hover:text-black">
+          <div className="group mt-4 flex cursor-pointer items-center gap-2 text-sm text-[#516856] hover:text-[#516856]">
           </div>
         </div>
       </div>
       {/* Content Quality Stat */}
-      <div className="relative bg-black rounded-xl p-6 border text-white border-white shadow-lg">
+      <div className="relative bg-black rounded-xl p-6 border text-[#516856] border-white shadow-lg">
         <div className="absolute top-0 right-0 p-3">
           <Target className="size-10 text-gray-300" />
         </div>
         <div className="flex flex-col">
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold text-white">
+            <span className="text-4xl font-bold text-[#516856]">
               <NumberTicker value={100} />%
             </span>
           </div>
-          <div className="mt-3 text-white font-medium text-lg">
+          <div className="mt-3 text-[#516856] font-medium text-lg">
             Strategy Driven
           </div>
-          <p className="mt-1 text-sm text-white">
+          <p className="mt-1 text-sm text-[#516856]">
             Purposeful content that delivers results, no fluff
           </p>
-          <div className="group mt-4 flex cursor-pointer items-center gap-2 text-sm text-gray-400 hover:text-white">
+          <div className="group mt-4 flex cursor-pointer items-center gap-2 text-sm text-gray-400 hover:text-[#516856]">
           </div>
         </div>
       </div>
@@ -203,8 +203,8 @@ export default function About() {
 
   return (
     <>
-      <Curve backgroundColor={"#f1f1f1"}>
-        <div className="bg-[#494949]">
+      <Curve backgroundColor={"#f7f2e6"}>
+        <div className="bg-[#f7f2e6]">
           <div className="w-full">
             {/* Fullscreen Iframe - with improved handling */}
             <section className="w-full h-screen flex flex-col">
@@ -224,7 +224,7 @@ export default function About() {
             </section>
             {/* Main scrollable content with Locomotive Scroll */}
             <div data-scroll-container className="w-full">
-              <div className="relative z-10 bg-[#494949] lg:py-32 overflow-hidden">
+              <div className="relative z-10 bg-[#f7f2e6] lg:py-32 overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-red-600 blur-3xl"></div>
@@ -234,8 +234,8 @@ export default function About() {
                   {/* Heading with refined typography */}
                   <div className="container mx-auto px-6 relative">
                     {/* Heading with refined typography */}
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-white">
-                      Behind <span className="italic text-red-500 relative">
+                    <h2 className="text-4xl md:text-5xl lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#516856]">
+                      Behind <span className="text-[#516856] relative">
                         Social Moodboard
                         <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
                       </span>
@@ -256,14 +256,14 @@ export default function About() {
 
                       {/* Text Section with better layout */}
                       <div className="max-w-xl text-center lg:text-left mt-12 lg:mt-0">
-                        <p className="text-white/90 text-lg font-light mb-8 font-['Gilda_Display'] leading-relaxed">
-                          With over four years of experience, I, <strong className="text-red-400">Vishishta Banerjee</strong>, have worked with brands across industries, transforming their online presence. I create strategies that don&apos;t just &quot;look good&quot; but actually drive results. From F&B hotspots to corporate houses, I&apos;ve helped businesses craft an identity, connect with their audience, and, most importantly—convert.
+                        <p className="text-[#516856]/90 text-lg font-light mb-8 font-['Gilda_Display'] leading-relaxed">
+                          With over four years of experience, I, <strong className="text-[#516856]">Vishishta Banerjee</strong>, have worked with brands across industries, transforming their online presence. I create strategies that don&apos;t just &quot;look good&quot; but actually drive results. From F&B hotspots to corporate houses, I&apos;ve helped businesses craft an identity, connect with their audience, and, most importantly—convert.
                         </p>
 
                         {/* Enhanced button with animation - Fixed to use Next Link */}
                         <Link
                           href="/about"
-                          className="inline-flex items-center m-16 px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                          className="inline-flex items-center m-16 px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-[#516856] font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                         >
                           <span className="font-['Gilda_Display'] ">Learn More About Us</span>
                           <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -277,9 +277,9 @@ export default function About() {
 
                 {/* Niches Section */}
                 <div className="relative z-10 mb-20">
-                  <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-white">
+                  <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-[#516856]">
                     Niches <span className="relative inline-block">
-                      <span className="italic text-red-500">Worked In</span>
+                      <span className="text-[#516856]">Worked In</span>
                       <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
                     </span>
                   </h2>
@@ -309,14 +309,14 @@ export default function About() {
 
                         {/* Hover indicator */}
                         <div className="absolute top-4 right-4 bg-red-500 rounded-full p-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-[#516856]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                           </svg>
                         </div>
                       </div>
 
                       <div className="p-6">
-                        <h3 className="text-2xl font-bold text-white font-['Gilda_Display'] group-hover:text-red-500 transition-colors duration-300">
+                        <h3 className="text-2xl font-bold text-[#516856] font-['Gilda_Display'] group-hover:text-[#516856] transition-colors duration-300">
                           {niche.title}
                         </h3>
 
@@ -324,7 +324,7 @@ export default function About() {
                           <div className="flex items-center space-x-1">
                             <span className="text-xs text-gray-400">Results-driven approach</span>
                           </div>
-                          <div className="inline-flex items-center justify-center size-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg shadow-red-500/20">
+                          <div className="inline-flex items-center justify-center size-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-[#516856] shadow-lg shadow-red-500/20">
                             <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                             </svg>
@@ -338,13 +338,13 @@ export default function About() {
               </div>
 
               {/* Horizontal Stats Section with Custom Background */}
-              <section data-scroll-section className="py-16 bg-[#494949] text-black">
-                <div className="flex flex-col items-center bg-[#494949] justify-center">
+              <section data-scroll-section className="py-16 bg-[#f7f2e6] text-[#516856]">
+                <div className="flex flex-col items-center bg-[#f7f2e6] justify-center">
                   <div className="mb-6 flex size-12 items-center justify-center rounded-lg border-2 border-black-500/30 bg-purple-500/10 shadow-lg shadow-white-500/20">
-                    <Zap aria-hidden="true" className="size-7 text-white" />
+                    <Zap aria-hidden="true" className="size-7 text-[#516856]" />
                   </div>
-                  <h2 className="text-4xl md:text-5xl bg-[#494949] lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-white">
-                    Our Statergies <span className="italic text-red-500 relative">
+                  <h2 className="text-4xl md:text-5xl bg-[#f7f2e6] lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#516856]">
+                    Our Statergies <span className="text-[#516856] relative">
                       turnt brand into powerhouses
                       <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
                     </span>
@@ -359,7 +359,7 @@ export default function About() {
               </section>
 
               <div data-scroll-section>
-                <Ready />
+
               </div>
             </div>
           </div>

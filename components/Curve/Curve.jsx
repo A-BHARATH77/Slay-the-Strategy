@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { text, curve, translate } from "@/motion";
 
 const routes = {
-	"/":"Business glow-ups start here.",
+	"/":"#not so HAYWIRE",
 	"/works":"Our epic masterpieces.",
 	"/contact":"Reach out to elevate your brand.",
 	"/services":"Bespoke craft with a touch of exclusivity.",

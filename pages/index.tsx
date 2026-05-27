@@ -1,6 +1,6 @@
 "use client";
 
-import { Curve, Ready } from "@/components";
+import { Curve } from "@/components";
 import { About, Clients, Hero, Projects } from "@/container";
 
 export default function Home() {
@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <>
       <div id="main" className="overflow-auto"> {/* Add overflow-auto for natural scrolling */}
-        <Curve backgroundColor={"#f1f1f1"}>
+        <Curve backgroundColor={"#f7f2e6"}>
           <Hero />
           <About />
           <Projects />
           <Clients />
-          <Ready />
+
         </Curve>
       </div>
     </>

@@ -20,7 +20,7 @@ export default function About() {
   };
 
   return (
-    <Curve backgroundColor={"#f1f1f1"}>
+    <Curve backgroundColor={"#f7f2e6"}>
       <section className="w-full h-screen flex flex-col">
         {/* Iframe taking full remaining height */}
         <div className="relative w-full h-full">
