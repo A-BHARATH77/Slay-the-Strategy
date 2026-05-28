@@ -6,7 +6,7 @@ import Expertise from "@/components/Expertise";
 
 
 const socialLinks = [
-  { id: 1, title: "Instagram", href: "https://www.instagram.com/socialmooodboard/", icon: <Instagram size={20} /> },
+  { id: 1, title: "Instagram", href: "https://www.instagram.com/slaywithdipani", icon: <Instagram size={20} /> },
   { id: 2, title: "LinkedIn", href: "https://www.linkedin.com/in/vishishta-banerjee-9652ba198/", icon: <Linkedin size={20} /> },
   { id: 3, title: "Facebook", href: "https://www.facebook.com/profile.php?id=61573787330753", icon: <Facebook size={20} /> },
 

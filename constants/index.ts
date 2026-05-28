@@ -18,7 +18,7 @@ export const footerItems = [
    {
       id: 1,
       title: "Instagram",
-      href: "https://www.instagram.com/socialmooodboard/",
+      href: "https://www.instagram.com/slaywithdipani",
    },
 
    {

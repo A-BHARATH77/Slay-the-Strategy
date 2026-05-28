@@ -93,7 +93,7 @@ export default function Footer() {
             </p>
             <ul className="flex flex-col gap-2.5">
               {[
-                { label: "Instagram", href: "https://www.instagram.com/slaythestrategy/" },
+                { label: "Instagram", href: "https://www.instagram.com/slaywithdipani" },
                 { label: "LinkedIn", href: "https://www.linkedin.com/in/vishishta-banerjee-9652ba198/" },
                 { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61573787330753" },
               ].map((item) => (
