@@ -82,7 +82,7 @@ export default function Navbar() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className={`flex items-center px-2 py-1 ${
-                    isActive ? "text-[#516856]" : "text-[#516856]/70 hover:text-[#516856]"
+                    isActive ? "text-[#526855]" : "text-[#526855]/70 hover:text-[#526855]"
                   }`}
                 >
                   {IconComponent && <IconComponent size={16} className="mr-1" />}
@@ -90,7 +90,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 w-full h-0.5 bg-[#516856]"
+                      className="absolute -bottom-1 w-full h-0.5 bg-[#f7f2e6]"
                       transition={{ duration: 0.3 }}
                     />
                   )}

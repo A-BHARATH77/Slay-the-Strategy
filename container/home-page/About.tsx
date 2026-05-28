@@ -6,9 +6,9 @@ import Expertise from "@/components/Expertise";
 
 
 const socialLinks = [
-  { id: 1, title: "Instagram", href: "https://www.instagram.com/slaywithdipani", icon: <Instagram size={20} /> },
-  { id: 2, title: "LinkedIn", href: "https://www.linkedin.com/in/vishishta-banerjee-9652ba198/", icon: <Linkedin size={20} /> },
-  { id: 3, title: "Facebook", href: "https://www.facebook.com/profile.php?id=61573787330753", icon: <Facebook size={20} /> },
+  { id: 1, title: "Instagram", href: " https://www.instagram.com/slaythestrategy.agency/", icon: <Instagram size={20} /> },
+  { id: 2, title: "LinkedIn", href: " https://www.linkedin.com/in/dipani-handa-a7460066/", icon: <Linkedin size={20} /> },
+  { id: 3, title: "Facebook", href: "https://www.facebook.com/profile.php?id=61586631632667", icon: <Facebook size={20} /> },
 
 ];
 
@@ -146,21 +146,21 @@ const ServicePopup = ({ service, isOpen, onClose }: { service: any, isOpen: bool
         <div className="bg-black p-6 relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-[#516856] hover:text-[#516856] transition-colors"
+            className="absolute top-4 right-4 text-[#f7f2e6] hover:text-[#f7f2e6] transition-colors"
           >
             <X size={24} />
           </button>
-          <h3 className="font-['Gilda_Display'] text-3xl text-[#516856]">{service.title}</h3>
+          <h3 className="font-['Gilda_Display'] text-3xl text-[#f7f2e6]">{service.title}</h3>
         </div>
 
         {/* Bulletins section */}
         <div className="p-8">
-          <h4 className="text-[#516856] mb-4 font-['Gilda_Display'] text-xl">Services Include:</h4>
+          <h4 className="text-[#f7f2e6] mb-4 font-['Gilda_Display'] text-xl">Services Include:</h4>
           <ul className="space-y-4">
             {service.bulletins.map((item: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined, index: Key | null | undefined) => (
               <li key={index} className="flex items-start gap-3">
                 <div className="mt-1 h-4 w-4 rounded-full bg-red-500 flex-shrink-0"></div>
-                <p className="text-[#516856] font-['Montserrat'] text-lg">{item}</p>
+                <p className="text-[#f7f2e6] font-['Montserrat'] text-lg">{item}</p>
               </li>
             ))}
           </ul>
@@ -194,33 +194,33 @@ export default function About() {
     <section className="w-full bg-[#f7f2e6] py-32 px-8 sm:px-12 lg:px-16 relative overflow-hidden">
       {/* Refined background elements with reduced opacity */}
 
-      {/* Header Section - Added more vertical spacing */}
-      <div className="text-center max-w-4xl mx-auto relative z-10 mb-40">
+      {/* Header Section - Reduced vertical spacing */}
+      <div className="text-center max-w-4xl mx-auto relative z-10 mb-12">
         <div className="mb-12">
-          <span className="px-6 py-2 bg-[#f7f2e6] tracking-tight font-bold rounded-full text-sm text-[#516856] opacity-100 border border-gray-800 uppercase">
+          <span className="px-6 py-2 bg-[#f7f2e6] tracking-tight font-bold rounded-full text-sm text-[#526855] opacity-100 border border-gray-800 uppercase">
             Elevate Your Digital Presence
           </span>
         </div>
 
-        <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#516856] opacity-100 text-center">
+        <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#526855] opacity-100 text-center">
           Welcome to
-          <span className="block sm:inline text-[#516856]"> Slay the Strategy</span>
+          <span className="block sm:inline text-[#526855]"> Slay the Strategy</span>
         </h1>
 
-        <p className="text-[#516856] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
+        <p className="text-[#526855] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
           We craft bespoke social media strategies, visual identities, optimization solutions, and forward-thinking digital strategies that elevate your brand's presence.
         </p>
 
         <div className="mt-16 flex flex-wrap justify-center gap-8">
           <a
             href="/contact"
-            className="px-10 py-4 bg-[#516856] text-[#f7f2e6] font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group font-['Gilda_Display']"
+            className="px-10 py-4 bg-[#526855] text-[#f7f2e6] font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 group font-['Gilda_Display']"
           >
             Start a Project <ChevronRight size={16} className="transform group-hover:translate-x-1 transition-transform duration-300" />
           </a>
           <a
             href="/services"
-            className="px-10 py-4 bg-[#516856] text-[#f7f2e6] opacity-100 font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-800 shadow-sm group font-['Gilda_Display']"
+            className="px-10 py-4 bg-[#526855] text-[#f7f2e6] opacity-100 font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-800 shadow-sm group font-['Gilda_Display']"
           >
             Explore Services
           </a>
@@ -229,92 +229,92 @@ export default function About() {
 
       <Expertise />
 
-      {/* Social Links Section - More elegant spacing */}
-      <div className="pt-24 border-t border-gray-800 relative z-10">
-        <h2 className="text-2xl font-normal mb-16 text-center font-['Gilda_Display'] text-[#516856] opacity-100">
-          Connect With Us
-        </h2>
-
-        <div className="flex flex-wrap justify-center gap-8">
-          {socialLinks.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-[#516856] opacity-40 hover:text-[#516856] font-light transition-all duration-300 gap-2"
-            >
-              {item.icon}
-              <span>{item.title}</span>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* About the Founder Section */}
-      <div className="relative z-10 bg-transparent lg:py-32 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-red-600 blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-red-800 blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-6 relative">
-          {/* Heading with refined typography */}
-          <h2 className="text-4xl md:text-5xl lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#516856]">
-            Behind <span className="text-[#516856] relative">
-              Slay the Strategy
-            </span>
+      {/* Social Links Section */}
+        <div className="pt-12 border-t border-gray-800 relative z-10">
+          <h2 className="text-2xl font-normal mb-6 text-center font-['Gilda_Display'] text-[#526855] opacity-100">
+            Connect With Us
           </h2>
+        </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 mx-auto max-w-7xl">
-            {/* Image Section with enhanced styling */}
-            <div className="w-64 h-80 lg:w-80 lg:h-[30rem] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500 relative -mt-6 lg:-mt-10">
-              <img
-                src="/founder.webp"
-                alt="Dipani"
-                className="w-full h-full object-cover object-[50%_15%]"
-              />
-            </div>
-
-            {/* Text Section with better layout */}
-            <div className="max-w-xl text-center lg:text-left mt-12 lg:mt-0">
-              <p className="text-[#516856]/90 text-lg font-light mb-8 font-['Gilda_Display'] leading-relaxed">
-                With over four years of experience, I, <strong className="text-[#516856]">Vishishta Banerjee</strong>, have worked with brands across industries, transforming their online presence. I create strategies that don't just "look good" but actually drive results. From F&B hotspots to corporate houses, I've helped businesses craft an identity, connect with their audience, and, most importantly, convert.
-              </p>
-
-              {/* Enhanced button with animation */}
-                <a
-                  href="/about"
-                  className="inline-flex items-center gap-2 m-16 px-8 py-4 bg-[#516856] text-[#f7f2e6] font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group font-['Gilda_Display']"
-                >
-                  Learn More About Us
-                  <ChevronRight
-                    size={16}
-                    className="transform group-hover:translate-x-1 transition-transform duration-300"
-                  />
-                </a>
-            </div>
+        {/* About the Founder Section Header */}
+        <div className="relative z-10 bg-transparent pb-0 overflow-hidden">
+          <div className="container mx-auto px-6 relative">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl mb-6 text-center font-['Gilda_Display'] text-[#526855]">
+              Behind <span className="text-[#526855] relative">
+                Slay the Strategy
+              </span>
+            </h2>
           </div>
         </div>
+
+      {/* Founder Section — image left, text right */}
+      <div className="relative z-10 py-20">
+        <div className="max-w-6xl mx-auto px-6 flex flex-row items-center justify-center gap-20 lg:gap-28">
+
+          {/* Left — image */}
+          <div className="flex-shrink-0 w-80 lg:w-96">
+            <img
+              src="/founder.webp"
+              alt="Dipani"
+              className="w-full h-auto object-cover rounded-2xl shadow-xl"
+            />
+          </div>
+
+          {/* Right — text content */}
+          <div className="flex flex-col gap-6 max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal font-['Gilda_Display'] text-[#526855] leading-tight">
+              I am Dipani, a<br />brand strategist
+            </h2>
+
+            {/* Quote block with left border */}
+            <div className="border-l-4 border-[#526855] pl-5">
+              <p className="text-[#526855] text-lg font-semibold font-['Gilda_Display'] leading-snug">
+                I build compelling social media presences that convert attention into unbreakable loyalty.
+              </p>
+            </div>
+
+            {/* Bio paragraph */}
+            <p className="text-[#526855]/75 text-base font-light font-['Gilda_Display'] leading-relaxed">
+              I started Slay the Strategy to help ambitious brands cut through the noise. We combine data-backed marketing strategies with scroll-stopping creative content to build digital footprints that actually matter.
+            </p>
+
+            {/* Social links */}
+            <div className="flex flex-wrap gap-6 pt-2">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-[#526855]/60 hover:text-[#526855] font-light transition-all duration-300 gap-2 font-['Gilda_Display']"
+                >
+                  {item.icon}
+                  <span>{item.title}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
+
 
       {/* Niches Section */}
       <div className="relative z-10 mb-20">
-        <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-[#516856]">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-[#526855]">
           Niches <span className="relative inline-block">
-            <span className="text-[#516856]">Worked In</span>
+            <span className="text-[#526855]">Worked In</span>
           </span>
         </h2>
         <div className="mt-4 max-w-xl mx-auto">
-          <p className="text-gray-400 text-center text-sm md:text-base">
+          <p className="text-[#526855]/85 text-center text-sm md:text-base">
             Specialized expertise across multiple industries with proven results
           </p>
         </div>
       </div>
 
       {/* Improved Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
         {nicheData.map((niche) => (
           <div
             key={niche.id}
@@ -332,14 +332,14 @@ export default function About() {
 
               {/* Hover indicator */}
               <div className="absolute top-4 right-4 bg-red-500 rounded-full p-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                <svg className="w-4 h-4 text-[#516856]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#526855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </div>
             </div>
 
             <div className="p-6">
-              <h3 className="text-2xl font-bold text-[#516856] font-['Gilda_Display'] group-hover:text-[#516856] transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-[#526855] font-['Gilda_Display'] group-hover:text-[#526855] transition-colors duration-300">
                 {niche.title}
               </h3>
 
@@ -347,7 +347,7 @@ export default function About() {
                 <div className="flex items-center space-x-1">
                   <span className="text-xs text-gray-400">Results-driven approach</span>
                 </div>
-                <div className="inline-flex items-center justify-center size-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-[#516856] shadow-lg shadow-red-500/20">
+                <div className="inline-flex items-center justify-center size-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-[#526855] shadow-lg shadow-red-500/20">
                   <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>

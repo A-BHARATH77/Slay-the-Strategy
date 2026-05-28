@@ -60,7 +60,7 @@ const Stars = ({ count }: { count: number }) => (
     {[1, 2, 3, 4, 5].map((i) => (
       <span
         key={i}
-        className={`text-lg ${i <= count ? "text-yellow-400" : "text-[#516856]/20"}`}
+        className={`text-lg ${i <= count ? "text-yellow-400" : "text-[#f7f2e6]/20"}`}
       >
         ★
       </span>
@@ -73,7 +73,7 @@ const ReviewCard = ({ name, role, description, img, rating }: any) => (
   <figure className="w-72 flex-shrink-0 rounded-2xl bg-[#fdf8ee] border border-[#e8dfc8] p-6 flex flex-col justify-between shadow-sm mx-3">
     <div>
       <Stars count={rating} />
-      <blockquote className="text-[#516856]/85 text-sm leading-relaxed font-['Gilda_Display']">
+      <blockquote className="text-[#526855]/85 text-sm leading-relaxed font-['Gilda_Display']">
         &ldquo;{description}&rdquo;
       </blockquote>
     </div>
@@ -89,8 +89,8 @@ const ReviewCard = ({ name, role, description, img, rating }: any) => (
         />
       </div>
       <div>
-        <p className="text-sm font-semibold text-[#516856] font-['Gilda_Display']">{name}</p>
-        <p className="text-xs text-[#516856]/55 font-['Gilda_Display']">{role}</p>
+        <p className="text-sm font-semibold text-[#f7f2e6] font-['Gilda_Display']">{name}</p>
+        <p className="text-xs text-[#f7f2e6]/55 font-['Gilda_Display']">{role}</p>
       </div>
     </div>
   </figure>
@@ -144,15 +144,15 @@ function Marquee({
 // ── Main component ──
 export default function Clients() {
   return (
-    <section className="bg-[#f7f2e6] py-20 overflow-hidden">
+    <section className="bg-[#526855] py-20 overflow-hidden">
       {/* Header */}
       <div className="text-center mb-12 px-4">
         <div className="inline-flex mb-5">
-          <span className="px-4 py-1.5 text-xs font-medium text-[#516856] border border-[#516856]/30 rounded-full font-['Gilda_Display']">
+          <span className="px-4 py-1.5 text-xs font-medium text-[#f7f2e6] border border-[#516856]/30 rounded-full font-['Gilda_Display']">
             Testimonials
           </span>
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#516856] font-['Gilda_Display'] leading-tight max-w-xl mx-auto">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#f7f2e6] font-['Gilda_Display'] leading-tight max-w-xl mx-auto">
           Trusted by teams who value quality.
         </h2>
       </div>
@@ -162,13 +162,13 @@ export default function Clients() {
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10"
           style={{
-            background: "linear-gradient(to right, #f7f2e6, transparent)",
+            background: "linear-gradient(to right, #526855, transparent)",
           }}
         />
         <div
           className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10"
           style={{
-            background: "linear-gradient(to left, #f7f2e6, transparent)",
+            background: "linear-gradient(to left, #526855, transparent)",
           }}
         />
         <Marquee pauseOnHover>
@@ -180,8 +180,8 @@ export default function Clients() {
 
       {/* Bottom stat */}
       <div className="text-center mt-10">
-        <p className="text-sm text-[#516856]/65 font-['Gilda_Display']">
-          <span className="text-[#516856] font-semibold">+200</span>{" "}
+        <p className="text-sm text-[#f7f2e6]/65 font-['Gilda_Display']">
+          <span className="text-[#f7f2e6] font-semibold">+200</span>{" "}
           projects delivered across growing companies.
         </p>
       </div>

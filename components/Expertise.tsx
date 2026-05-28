@@ -59,26 +59,26 @@ export default function Expertise() {
         {/* Left: badge + big heading */}
         <div className="flex flex-col gap-4 max-w-[560px]">
           <div className="inline-flex">
-            <span className="px-3 py-1 text-xs font-medium text-[#f7f2e6] border border-[#f7f2e6]/30 rounded-full font-['Gilda_Display']">
+            <span className="px-3 py-1 text-xs font-medium text-[#526855] border border-[#516856]/30 rounded-full font-['Gilda_Display']">
               Our Services
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-normal leading-[1.1] tracking-tight text-[#f7f2e6] font-['Gilda_Display']">
+          <h2 className=" text-[#526855] text-4xl md:text-5xl lg:text-[56px] font-normal leading-[1.1] tracking-tight text-[#516856] font-['Gilda_Display']">
             Strategies shaped by{" "}
-            <span className="text-[#f7f2e6]">clarity and intent.</span>
+            <span className="text-[#526855]">clarity and intent.</span>
           </h2>
         </div>
 
         {/* Right: description */}
-        <p className="text-[#f7f2e6]/60 text-base leading-relaxed font-['Gilda_Display'] max-w-[340px] md:text-right md:self-end">
+        <p className="text-[#526855]/60 text-base leading-relaxed font-['Gilda_Display'] max-w-[340px] md:text-right md:self-end">
           We offer focused services crafted with a structured approach, clear thinking, and attention to detail at every stage.
         </p>
       </div>
 
       {/* ── Main Card ── */}
       <div
-        className="bg-[#516856] border border-[#f7f2e6]/15 rounded-[32px] overflow-hidden flex"
-        style={{ height: "640px", boxShadow: "0 4px 40px rgba(247,242,230,0.10)" }}
+        className="bg-[#526855] border border-[#f7f2e6]/15 rounded-[32px] overflow-hidden flex"
+        style={{ height: "640px", boxShadow: "0 4px 40px rgba(81,104,86,0.10)" }}
       >
         {/* Left Sidebar */}
         <div
@@ -96,17 +96,17 @@ export default function Expertise() {
                   onClick={() => setActiveTab(service.id)}
                   className={`flex items-center gap-2.5 px-3 py-3 rounded-xl text-left transition-all duration-200 ${
                     isActive
-                      ? "bg-[#516856] text-[#f7f2e6] shadow-sm"
-                      : "text-[#f7f2e6]/50 hover:bg-[#516856]/50 hover:text-[#f7f2e6]/80"
+                      ? "bg-[#f7f2e6] text-[#526855] shadow-sm"
+                      : "text-[#f7f2e6]/50 hover:bg-[#f7f2e6]/10 hover:text-[#f7f2e6]/80"
                   }`}
                 >
                   <Icon
                     size={16}
-                    className={`flex-shrink-0 ${isActive ? "text-[#f7f2e6]" : "text-[#f7f2e6]/40"}`}
+                    className={`flex-shrink-0 ${isActive ? "text-[#526855]" : "text-[#f7f2e6]/60"}`}
                   />
                   <span
                     className={`text-[16px] font-['Gilda_Display'] ${
-                      isActive ? "font-semibold text-[#f7f2e6]" : "font-normal text-[#f7f2e6]"
+                      isActive ? "font-semibold text-[#526855]" : "font-normal text-[#f7f2e6]"
                     }`}
                   >
                     {service.name}
@@ -121,7 +121,7 @@ export default function Expertise() {
             {["SM", "GR", "ST", "VI", "BR", "MK", "CO", "+5"].map((label, i) => (
               <div
                 key={i}
-                className="w-9 h-9 rounded-xl bg-[#516856] border border-[#f7f2e6]/15 flex items-center justify-center shadow-sm"
+                className="w-9 h-9 rounded-xl bg-[#526855] border border-[#f7f2e6]/15 flex items-center justify-center shadow-sm"
               >
                 <span className="text-[10px] font-medium text-[#f7f2e6]/70 font-['Gilda_Display']">
                   {label}
