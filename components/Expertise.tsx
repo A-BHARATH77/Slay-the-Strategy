@@ -8,7 +8,7 @@ const services = [
   {
     id: "social-media",
     name: "Social Media",
-    title: "Social Media Strategy.",
+    title: "Social Media Strategy",
     description:
       "We craft bespoke social media strategies that connect with your audience through carefully curated visuals and purposeful messaging.",
     tags: ["Content Creation", "Community Management", "Brand Voice", "Campaign Planning", "+more"],
@@ -18,7 +18,7 @@ const services = [
   {
     id: "growth",
     name: "Growth",
-    title: "Brand Growth.",
+    title: "Brand Growth",
     description:
       "We design and execute growth strategies that transform your brand's digital presence, turning followers into loyal customers.",
     tags: ["Audience Growth", "Engagement Strategy", "Analytics", "Paid Ads", "+more"],
@@ -28,7 +28,7 @@ const services = [
   {
     id: "strategy",
     name: "Strategy",
-    title: "Digital Strategy.",
+    title: "Digital Strategy",
     description:
       "We build forward-thinking digital strategies that elevate your brand and drive measurable results across every touchpoint.",
     tags: ["Brand Positioning", "Market Research", "Competitor Analysis", "Roadmapping", "+more"],
@@ -38,7 +38,7 @@ const services = [
   {
     id: "identity",
     name: "Visual Identity",
-    title: "Visual Identity.",
+    title: "Visual Identity",
     description:
       "We create visual identities that define and elevate brands, ensuring they resonate with their audience through intentional design.",
     tags: ["Logo Design", "Brand Guidelines", "Typography", "Color Systems", "+more"],

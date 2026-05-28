@@ -204,7 +204,7 @@ export default function About() {
 
         <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#526855] opacity-100 text-center">
           Welcome to
-          <span className="block sm:inline text-[#526855]"> Slay the Strategy</span>
+          <span className="block sm:inline text-[#526855] italic"> Slay the Strategy</span>
         </h1>
 
         <p className="text-[#526855] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
@@ -240,7 +240,7 @@ export default function About() {
         <div className="relative z-10 bg-transparent pb-0 overflow-hidden">
           <div className="container mx-auto px-6 relative">
             <h2 className="text-4xl md:text-5xl lg:text-7xl mb-6 text-center font-['Gilda_Display'] text-[#526855]">
-              Behind <span className="text-[#526855] relative">
+              Behind <span className="text-[#526855] relative italic">
                 Slay the Strategy
               </span>
             </h2>
@@ -263,7 +263,7 @@ export default function About() {
           {/* Right — text content */}
           <div className="flex flex-col gap-6 max-w-xl">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal font-['Gilda_Display'] text-[#526855] leading-tight">
-              I am Dipani, a<br />brand strategist
+              I am Dipani, a<br /><span className="italic">brand strategist</span>
             </h2>
 
             {/* Quote block with left border */}
@@ -303,7 +303,7 @@ export default function About() {
       <div className="relative z-10 mb-20">
         <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-[#526855]">
           Niches <span className="relative inline-block">
-            <span className="text-[#526855]">Worked In</span>
+            <span className="text-[#526855] italic">Worked In</span>
           </span>
         </h2>
         <div className="mt-4 max-w-xl mx-auto">
@@ -318,7 +318,7 @@ export default function About() {
         {nicheData.map((niche) => (
           <div
             key={niche.id}
-            className="group bg-black rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+            className="group bg-[#526855] rounded-xl overflow-hidden shadow-lg border border-[#526855]/50 hover:border-[#f7f2e6]/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
           >
             <div className="relative h-64 overflow-hidden">
               <Image
@@ -331,7 +331,7 @@ export default function About() {
               <div className="absolute inset-0 group-hover:opacity-60 transition-opacity duration-300"></div>
 
               {/* Hover indicator */}
-              <div className="absolute top-4 right-4 bg-red-500 rounded-full p-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+              <div className="absolute top-4 right-4 bg-[#f7f2e6] rounded-full p-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                 <svg className="w-4 h-4 text-[#526855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
@@ -339,15 +339,15 @@ export default function About() {
             </div>
 
             <div className="p-6">
-              <h3 className="text-2xl font-bold text-[#526855] font-['Gilda_Display'] group-hover:text-[#526855] transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-[#f7f2e6] font-['Gilda_Display'] group-hover:text-[#f7f2e6]/90 transition-colors duration-300">
                 {niche.title}
               </h3>
 
               <div className="mt-6 flex items-center justify-between">
                 <div className="flex items-center space-x-1">
-                  <span className="text-xs text-gray-400">Results-driven approach</span>
+                  <span className="text-xs text-[#f7f2e6]/70">Results-driven approach</span>
                 </div>
-                <div className="inline-flex items-center justify-center size-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-[#526855] shadow-lg shadow-red-500/20">
+                <div className="inline-flex items-center justify-center size-8 rounded-full bg-[#f7f2e6] text-[#526855] shadow-lg shadow-[#f7f2e6]/20">
                   <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>

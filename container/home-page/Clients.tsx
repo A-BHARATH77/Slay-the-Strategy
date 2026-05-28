@@ -153,7 +153,7 @@ export default function Clients() {
           </span>
         </div>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-[#f7f2e6] font-['Gilda_Display'] leading-tight max-w-xl mx-auto">
-          Trusted by teams who value quality.
+          Trusted by teams who <span className="italic">value quality.</span>
         </h2>
       </div>
 
