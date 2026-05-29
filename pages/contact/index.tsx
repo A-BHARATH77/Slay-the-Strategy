@@ -37,10 +37,10 @@ export default function Contact() {
     <div data-scroll-container ref={containerRef}>
       <Curve backgroundColor={"#f7f2e6"}>
         {/* ── Main contact section ── */}
-        <section className="min-h-screen bg-[#f7f2e6] flex flex-col items-center justify-center px-4 py-20">
+        <section className="h-screen w-full bg-[#f7f2e6] flex flex-col items-center justify-center px-4 pt-16 pb-8">
           {/* Heading */}
-          <div className="text-center mb-10">
-            <h1 className="text-5xl md:text-6xl font-normal text-[#516856] font-['Gilda_Display'] leading-tight tracking-tight">
+          <div className="text-center mb-6">
+            <h1 className="text-4xl md:text-5xl font-normal text-[#516856] font-['Gilda_Display'] leading-tight tracking-tight">
               Let&apos;s <span className="text-[#516856]">talk.</span>
             </h1>
             <p className="mt-4 text-[#516856]/65 text-sm md:text-base font-['Gilda_Display'] max-w-sm mx-auto leading-relaxed">
@@ -64,7 +64,7 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 {/* Name */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm text-[#516856] font-['Gilda_Display']">
@@ -122,7 +122,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project"
-                    rows={5}
+                    rows={3}
                     required
                     className="w-full px-4 py-2.5 rounded-lg border border-[#516856]/20 bg-[#f7f2e6] text-[#516856] placeholder-[#516856]/35 text-sm font-['Gilda_Display'] outline-none focus:border-[#516856]/50 transition-colors resize-none"
                   />
