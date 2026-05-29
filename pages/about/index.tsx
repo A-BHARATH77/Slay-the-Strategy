@@ -1,12 +1,18 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
-import { Target, TrendingUp, Users, Zap } from "lucide-react";
+import { Target, TrendingUp, Users, Zap, Instagram, Linkedin, Facebook } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Curve } from "@/components";
 
 import { cn } from "@/lib/utils";
+
+const socialLinks = [
+  { id: 1, title: "Instagram", href: " https://www.instagram.com/slaythestrategy.agency/", icon: <Instagram size={20} /> },
+  { id: 2, title: "LinkedIn", href: " https://www.linkedin.com/in/dipani-handa-a7460066/", icon: <Linkedin size={20} /> },
+  { id: 3, title: "Facebook", href: "https://www.facebook.com/profile.php?id=61586631632667", icon: <Facebook size={20} /> },
+];
 
 // NumberTicker Component
 const NumberTicker = ({
@@ -62,7 +68,7 @@ const StatsSection = () => {
   return (
     <div className="mx-auto mt-14 pt-10 pb-12 grid max-w-5xl grid-cols-1 md:grid-cols-3 gap-8 px-6">
       {/* Reach Stat */}
-      <div className="relative bg-black rounded-xl text-[#f7f2e6] p-6 border border-gray-200 shadow-lg">
+      <div className="relative bg-[#526855] rounded-xl text-[#f7f2e6] p-6 border border-gray-200 shadow-lg">
         <div className="absolute top-0 right-0 p-3">
           <Users className="size-10 text-gray-300" />
         </div>
@@ -83,7 +89,7 @@ const StatsSection = () => {
         </div>
       </div>
       {/* Brands Stat */}
-      <div className="relative bg-black rounded-xl p-6 border border-gray-200 shadow-lg">
+      <div className="relative bg-[#526855] rounded-xl p-6 border border-gray-200 shadow-lg">
         <div className="absolute top-0 right-0 p-3">
           <TrendingUp className="size-10 text-gray-200" />
         </div>
@@ -104,7 +110,7 @@ const StatsSection = () => {
         </div>
       </div>
       {/* Content Quality Stat */}
-      <div className="relative bg-black rounded-xl p-6 border text-[#f7f2e6] border-white shadow-lg">
+      <div className="relative bg-[#526855] rounded-xl p-6 border text-[#f7f2e6] border-white shadow-lg">
         <div className="absolute top-0 right-0 p-3">
           <Target className="size-10 text-gray-300" />
         </div>
@@ -130,38 +136,17 @@ const StatsSection = () => {
 
 // Main About Component
 export default function About() {
-  // Updated niche data with fixed images
   const nicheData = [
-    {
-      id: 1,
-      title: "Home Automation & Brands",
-      imageUrl: "/i1.jpg"
-    },
-    {
-      id: 2,
-      title: "Interior Design Houses",
-      imageUrl: "/i2.jpg"
-    },
-    {
-      id: 3,
-      title: "Building Solutions",
-      imageUrl: "/i3.jpg"
-    },
-    {
-      id: 4,
-      title: "Salons",
-      imageUrl: "/i4.jpg"
-    },
-    {
-      id: 5,
-      title: "Food & Beverage Brands",
-      imageUrl: "/i5.jpg"
-    },
-    {
-      id: 6,
-      title: "Corporate Houses",
-      imageUrl: "/ch.png"
-    }
+    { id: 1, title: "Automation", imageUrl: "/i1.jpg" },
+    { id: 2, title: "Interior Design Houses", imageUrl: "/i2.jpg" },
+    { id: 3, title: "Events", imageUrl: "/i3.jpg" },
+    { id: 4, title: "D2C", imageUrl: "/i4.jpg" },
+    { id: 5, title: "Food & Beverage Brands", imageUrl: "/i5.jpg" },
+    { id: 6, title: "Education", imageUrl: "/ch.png" },
+    { id: 7, title: "Fashion", imageUrl: "/i1.jpg" },
+    { id: 8, title: "Technology", imageUrl: "/i2.jpg" },
+    { id: 9, title: "Corporate", imageUrl: "/i3.jpg" },
+    { id: 10, title: "Influencer", imageUrl: "/i4.jpg" }
   ];
 
   // Reference for the iframe
@@ -173,13 +158,8 @@ export default function About() {
       // Ensure iframe exists
       if (iframeRef.current && iframeRef.current.contentWindow) {
         try {
-          // Attempt to access and modify the iframe's scrolling behavior
           const iframeWindow = iframeRef.current.contentWindow;
-
-          // This will post a message to the iframe to disable scrolling
           iframeWindow.postMessage({ action: 'disableScroll' }, '*');
-
-          // Add a class to indicate the iframe is loaded
           iframeRef.current.classList.add('iframe-loaded');
         } catch (e) {
           console.error("Error setting up iframe:", e);
@@ -187,13 +167,11 @@ export default function About() {
       }
     };
 
-    // Attach load event listener
     const iframe = iframeRef.current;
     if (iframe) {
       iframe.addEventListener('load', handleIframeLoad);
     }
 
-    // Clean up
     return () => {
       if (iframe) {
         iframe.removeEventListener('load', handleIframeLoad);
@@ -203,8 +181,8 @@ export default function About() {
 
   return (
     <>
-      <Curve backgroundColor={"#526855"}>
-        <div className="bg-[#526855]">
+      <Curve backgroundColor={"#f7f2e6"}>
+        <div className="bg-[#f7f2e6]">
           <div className="w-full">
             {/* Fullscreen Iframe - with improved handling */}
             <section className="w-full h-screen flex flex-col">
@@ -217,139 +195,156 @@ export default function About() {
                   scrolling="no"
                   style={{
                     overflow: 'hidden',
-                    pointerEvents: 'auto' // Allow interaction but disable scrolling
+                    pointerEvents: 'auto'
                   }}
                 />
               </div>
             </section>
+            
             {/* Main scrollable content with Locomotive Scroll */}
             <div data-scroll-container className="w-full">
-              <div className="relative z-10 bg-[#526855] lg:py-32 overflow-hidden">
+              <div className="relative z-10 bg-[#f7f2e6] lg:py-32 overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-red-600 blur-3xl"></div>
                   <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-red-800 blur-3xl"></div>
                 </div>
+                
                 <div className="container mx-auto px-6 relative">
-                  {/* Heading with refined typography */}
-                  <div className="container mx-auto px-6 relative">
-                    {/* Heading with refined typography */}
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#f7f2e6]">
-                      Behind <span className="text-[#f7f2e6] relative">
-                        Social Moodboard
-                        <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
-                      </span>
-                    </h2>
-
-                    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 mx-auto max-w-7xl">
-                      {/* Image Section with enhanced styling */}
-                      <div className="w-64 h-80 lg:w-80 lg:h-[30rem] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500 relative -mt-6 lg:-mt-10">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-red-600/30 to-transparent mix-blend-overlay z-10"></div>
-                        <Image
-                          src="/vis.jpeg"
-                          alt="Vishishta Banerjee"
-                          width={320}
-                          height={480}
-                          className="w-full h-full object-cover object-[50%_15%]"
-                        />
-                      </div>
-
-                      {/* Text Section with better layout */}
-                      <div className="max-w-xl text-center lg:text-left mt-12 lg:mt-0">
-                        <p className="text-[#f7f2e6]/90 text-lg font-light mb-8 font-['Gilda_Display'] leading-relaxed">
-                          With over four years of experience, I, <strong className="text-[#f7f2e6]">Vishishta Banerjee</strong>, have worked with brands across industries, transforming their online presence. I create strategies that don&apos;t just &quot;look good&quot; but actually drive results. From F&B hotspots to corporate houses, I&apos;ve helped businesses craft an identity, connect with their audience, and, most importantly—convert.
-                        </p>
-
-                        {/* Enhanced button with animation - Fixed to use Next Link */}
-                        <Link
-                          href="/about"
-                          className="inline-flex items-center m-16 px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-[#f7f2e6] font-light rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-                        >
-                          <span className="font-['Gilda_Display'] ">Learn More About Us</span>
-                          <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                          </svg>
-                        </Link>
-                      </div>
+                  {/* About the Founder Section Header */}
+                  <div className="relative z-10 bg-transparent pb-0 overflow-hidden mt-24">
+                    <div className="container mx-auto px-6 relative">
+                      <h2 className="text-4xl md:text-5xl lg:text-7xl mb-6 text-center font-['Gilda_Display'] text-[#526855]">
+                        Behind <span className="text-[#526855] relative italic">
+                          Slay the Strategy
+                        </span>
+                      </h2>
                     </div>
                   </div>
-                </div>
 
-                {/* Niches Section */}
-                <div className="relative z-10 mb-20">
-                  <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-[#f7f2e6]">
-                    Niches <span className="relative inline-block">
-                      <span className="text-[#f7f2e6]">Worked In</span>
-                      <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
-                    </span>
-                  </h2>
-                  <div className="mt-4 max-w-xl mx-auto">
-                    <p className="text-gray-400 text-center text-sm md:text-base">
-                      Specialized expertise across multiple industries with proven results
-                    </p>
-                  </div>
-                </div>
+                  {/* Founder Section — image left, text right */}
+                  <div className="relative z-10 py-20">
+                    <div className="max-w-6xl mx-auto px-6 flex flex-row items-center justify-center gap-20 lg:gap-28">
 
-                {/* Improved Grid Layout */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-                  {nicheData.map((niche) => (
-                    <div
-                      key={niche.id}
-                      className="group bg-black rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-red-500/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                    >
-                      <div className="relative h-64 overflow-hidden">
-                        <Image
-                          src={niche.imageUrl}
-                          alt={`${niche.title} niche`}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-110"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      {/* Left — image */}
+                      <div className="flex-shrink-0 w-80 lg:w-96">
+                        <img
+                          src="/founder.webp"
+                          alt="Dipani"
+                          className="w-full h-auto object-cover rounded-2xl shadow-xl"
                         />
-                        <div className="absolute inset-0 bg-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+                      </div>
 
-                        {/* Hover indicator */}
-                        <div className="absolute top-4 right-4 bg-red-500 rounded-full p-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                          <svg className="w-4 h-4 text-[#f7f2e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                          </svg>
+                      {/* Right — text content */}
+                      <div className="flex flex-col gap-6 max-w-xl">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal font-['Gilda_Display'] text-[#526855] leading-tight">
+                          I am Dipani, a<br /><span className="italic">brand strategist</span>
+                        </h2>
+
+                        {/* Quote block with left border */}
+                        <div className="border-l-4 border-[#526855] pl-5">
+                          <p className="text-[#526855] text-lg font-semibold font-['Gilda_Display'] leading-snug">
+                            I build compelling social media presences that convert attention into unbreakable loyalty.
+                          </p>
+                        </div>
+
+                        {/* Bio paragraph */}
+                        <p className="text-[#526855]/75 text-base font-light font-['Gilda_Display'] leading-relaxed">
+                          I started Slay the Strategy to help ambitious brands cut through the noise. We combine data-backed marketing strategies with scroll-stopping creative content to build digital footprints that actually matter.
+                        </p>
+
+                        {/* Social links */}
+                        <div className="flex flex-wrap gap-6 pt-2">
+                          {socialLinks.map((item) => (
+                            <a
+                              key={item.id}
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center text-[#526855]/60 hover:text-[#526855] font-light transition-all duration-300 gap-2 font-['Gilda_Display']"
+                            >
+                              {item.icon}
+                              <span>{item.title}</span>
+                            </a>
+                          ))}
                         </div>
                       </div>
 
-                      <div className="p-6">
-                        <h3 className="text-2xl font-bold text-[#f7f2e6] font-['Gilda_Display'] group-hover:text-[#f7f2e6] transition-colors duration-300">
-                          {niche.title}
-                        </h3>
+                    </div>
+                  </div>
 
-                        <div className="mt-6 flex items-center justify-between">
-                          <div className="flex items-center space-x-1">
-                            <span className="text-xs text-gray-400">Results-driven approach</span>
-                          </div>
-                          <div className="inline-flex items-center justify-center size-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-[#f7f2e6] shadow-lg shadow-red-500/20">
-                            <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  {/* Niches Section */}
+                  <div className="relative z-10 mb-20">
+                    <h2 className="text-4xl md:text-5xl lg:text-7xl text-center font-['Gilda_Display'] text-[#526855]">
+                      Niches <span className="relative inline-block">
+                        <span className="text-[#526855] italic">Worked In</span>
+                      </span>
+                    </h2>
+                    <div className="mt-4 max-w-xl mx-auto">
+                      <p className="text-[#526855]/85 text-center text-sm md:text-base">
+                        Specialized expertise across multiple industries with proven results
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Improved Grid Layout */}
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-6">
+                    {nicheData.map((niche) => (
+                      <div
+                        key={niche.id}
+                        className="group bg-[#526855] rounded-xl overflow-hidden shadow-lg border border-[#526855]/50 hover:border-[#f7f2e6]/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <div className="relative h-64 overflow-hidden">
+                          <Image
+                            src={niche.imageUrl}
+                            alt={`${niche.title} niche`}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                          <div className="absolute inset-0 group-hover:opacity-60 transition-opacity duration-300"></div>
+
+                          {/* Hover indicator */}
+                          <div className="absolute top-4 right-4 bg-[#f7f2e6] rounded-full p-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                            <svg className="w-4 h-4 text-[#526855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
                           </div>
                         </div>
+
+                        <div className="p-6">
+                          <h3 className="text-2xl font-bold text-[#f7f2e6] font-['Gilda_Display'] group-hover:text-[#f7f2e6]/90 transition-colors duration-300">
+                            {niche.title}
+                          </h3>
+
+                          <div className="mt-6 flex items-center justify-between">
+                            <div className="flex items-center space-x-1">
+                              <span className="text-xs text-[#f7f2e6]/70">Results-driven approach</span>
+                            </div>
+                            <div className="inline-flex items-center justify-center size-8 rounded-full bg-[#f7f2e6] text-[#526855] shadow-lg shadow-[#f7f2e6]/20">
+                              <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
 
               </div>
 
               {/* Horizontal Stats Section with Custom Background */}
-              <section data-scroll-section className="py-16 bg-[#526855] text-[#f7f2e6]">
-                <div className="flex flex-col items-center bg-[#526855] justify-center">
-                  <div className="mb-6 flex size-12 items-center justify-center rounded-lg border-2 border-black-500/30 bg-purple-500/10 shadow-lg shadow-white-500/20">
-                    <Zap aria-hidden="true" className="size-7 text-[#f7f2e6]" />
-                  </div>
-                  <h2 className="text-4xl md:text-5xl bg-[#526855] lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#f7f2e6]">
-                    Our Statergies <span className="text-[#f7f2e6] relative">
+              <section data-scroll-section className="py-16 bg-[#f7f2e6] text-[#526855]">
+                <div className="flex flex-col items-center justify-center">
+                  <h2 className="text-4xl md:text-5xl lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#526855]">
+                    Our Strategies <span className="text-[#526855] relative">
                       turnt brand into powerhouses
                       <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
                     </span>
                   </h2>
-                  <p className="mt-4 text-center text-base text-gray-300 md:text-xl max-w-2xl">
+                  <p className="mt-4 text-center text-base text-[#526855]/75 md:text-xl max-w-2xl">
                     Delivering measurable results through data-driven campaigns and strategic content solutions.
                   </p>
                 </div>
@@ -357,10 +352,6 @@ export default function About() {
                 {/* Stats Cards */}
                 <StatsSection />
               </section>
-
-              <div data-scroll-section>
-
-              </div>
             </div>
           </div>
         </div>

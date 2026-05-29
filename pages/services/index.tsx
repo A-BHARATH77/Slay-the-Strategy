@@ -2,244 +2,14 @@
 import { useEffect } from "react";
 import { Instagram, Linkedin, ChevronRight, Facebook } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 import Expertise from "@/components/Expertise";
-
-
-// Define types for our data structures
-
-
-
-
-// Added testimonial interface
-interface Testimonial {
-  name: string;
-  email?: string;
-  description: string;
-  img: string;
-}
+import { Clients } from "@/container";
 
 const socialLinks = [
   { id: 1, title: "Instagram", href: " https://www.instagram.com/slaythestrategy.agency/", icon: <Instagram size={20} /> },
   { id: 2, title: "LinkedIn", href: " https://www.linkedin.com/in/dipani-handa-a7460066/", icon: <Linkedin size={20} /> },
   { id: 3, title: "Facebook", href: "https://www.facebook.com/profile.php?id=61586631632667", icon: <Facebook size={20} /> },
-
 ];
-
-
-
-// Added testimonials data
-const testimonials: Testimonial[] = [
-  {
-    name: "Prassana",
-    email: "johndoe23@gmail.com",
-    description: "Absolutely thrilled with Social Moodboard's service! They captured my brand's voice perfectly, crafted engaging content, and boosted my social media presence with professionalism, creativity, and strategic flair. A big thumbs up and 5 stars from me!",
-    img: "https://img.freepik.com/free-photo/brunette-girl-posing_23-2148108748.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "JZ Lake View",
-    email: "alexjohnson@gmail.com",
-    description: "Partnering with Social Moodboard has elevated JZ's brand with creative, engaging content. Their fresh ideas and dedication have boosted our online presence and audience connection.",
-    img: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "Yogita Dalvi, KDBS",
-    email: "emilydavis@gmail.com",
-    description: "We had a pleasant experience working with Vishishta for handling our social media handle. Her promptness and creativity is adorable!",
-    img: "https://img.freepik.com/free-photo/smiling-asian-woman_23-2147766303.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "Brew Merchant Café & Bar",
-    email: "michaelbrown@gmail.com",
-    description: "Working with Social Moodboard has been a total game-changer for us. Vishishta just *gets it*—she brings clarity, creativity, and structure to every campaign. From strategy to execution, everything feels intentional and aligned with our brand.",
-    img: "https://img.freepik.com/free-photo/portrait-modern-man_23-2147960990.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "Founder, Echo Bowl",
-    email: "sarahmiller@gmail.com",
-    description: "Vishishta is a powerhouse. She leads with insight, understands the pulse of the audience, and never delivers anything mediocre. The Social Moodboard team has helped us show up with consistency, edge, and style.",
-    img: "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "Owner, Chill House Interiors",
-    description: "We came to Social Moodboard for content support, and stayed for the energy, professionalism, and genuine passion. Vishishta's strategies are sharp and rooted in what actually works. She treats our brand like her own.",
-    img: "https://img.freepik.com/premium-photo/woman-wearing-glasses-yellow-shirt-is-wearing-yellow-shirt_911060-133057.jpg?ga=GA1.1.156494736.1719603061&semt=ais_hybrid",
-  },
-  {
-    name: "Bloomhaus Interiors",
-    description: "We were stuck with repetitive content until Vishishta came in with her magic. Within 2 months, our engagement went up 4x. If you want someone who brings strategy and taste, this is it.",
-    img: "/api/placeholder/400/400",
-  },
-  {
-    name: "Layla Hair Studio",
-    description: "Social Moodboard helped us launch from scratch and build a full vibe. From brand voice to reel ideas—every detail was intentional and so us. Vishishta brings confidence and calm to the chaos.",
-    img: "/api/placeholder/400/400",
-  },
-];
-
-// Divide testimonials into rows for the marquee
-const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
-const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
-
-// Added logos data
-const logos = [
-  { name: "Babel", url: "/l1.png" },
-  { name: "Ngrok", url: "/l5.png" },
-  { name: "Webflow", url: "/l12.png" },
-  { name: "Perplexity", url: "/l9.png" },
-  { name: "Sanity", url: "/l2.png" },
-  { name: "Post CSS", url: "/l3.png" },
-  { name: "Post CSS", url: "/l7.png" },  
-  { name: "Post CSS", url: "/l8.png" },
-  { name: "Post CSS", url: "/l6.png" },
-  { name: "Post CSS", url: "/l10.png" },
-  { name: "Post CSS", url: "/l11.png" },
-  { name: "Post CSS", url: "/l8.png" },
-  { name: "Post CSS", url: "/l4.png" },
-];
-
-// Marquee component
-interface MarqueeProps {
-  className?: string;
-  reverse?: boolean;
-  pauseOnHover?: boolean;
-  children?: React.ReactNode;
-  vertical?: boolean;
-  repeat?: number;
-  [key: string]: unknown; // Replaced 'any' with 'unknown'
-}
- 
-function Marquee({
-  className,
-  reverse,
-  pauseOnHover = false,
-  children,
-  vertical = false,
-  repeat = 4,
-  ...props
-}: MarqueeProps) {
-  return (
-    <div
-      {...props}
-      className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
-        {
-          "flex-row": !vertical,
-          "flex-col": vertical,
-        },
-        className
-      )}
-    >
-      {Array(repeat)
-        .fill(0)
-        .map((_, i) => (
-          <div
-            key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
-            })}
-          >
-            {children}
-          </div>
-        ))}
-    </div>
-  );
-}
-
-// ReviewCard component - Removed unused props
-const ReviewCard = ({ name, description }: Pick<Testimonial, 'name' | 'description'>) => {
-  return (
-    <figure className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]">
-      <div className="flex flex-row items-center gap-2">
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-[#f7f2e6] dark:text-[#f7f2e6]">
-            {name}
-          </figcaption>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm text-[#f7f2e6]">{description}</blockquote> 
-    </figure>
-  );
-};
-
-// LogoCloud component
-const LogoCloud = () => {
-  return (
-    <div className="w-full py-12 bg-slate-400 pt-10 pb-20">
-      <div className="mx-auto pt-10 w-full px-2 md:px-4">
-        <div
-          className="group relative mt-6 flex gap-6 overflow-hidden p-2"
-          style={{
-            maskImage:
-              "linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)",
-          }}
-        >
-          {Array(5)
-            .fill(null)
-            .map((_, index) => (
-              <div
-                key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
-              >
-                {logos.map((logo, key) => (
-                  <Image
-                    key={key}
-                    src={logo.url}
-                    width={168}
-                    height={112}
-                    className="h-28 w-42 px-2"
-                    alt={logo.name}
-                  />
-                ))}
-              </div>
-            ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Testimonial component
-const TestimonialSection = () => {
-  return (
-    <div className="relative flex h-auto w-full flex-col items-center font-['Gilda_Display'] bg-black justify-center overflow-hidden rounded-lg border  md:shadow-xl">
-      <div className="mx-auto max-w-4xl p-4 text-center sm:py-14">
-        <h2 className="mb-3 text-4xl font-['Gilda_Display'] text-[#f7f2e6] dark:text-[#f7f2e6] md:text-lg">
-          Empowering
-          <br />
-          <span className="bg-red-700 bg-clip-text text-transparent italic">
-            Individuals & Businesses
-          </span>
-        </h2>
-        <p className="text-2xl p-7 text-[#f7f2e6] italic dark:text-[#f7f2e6] md:text-xl">
-          &ldquo;Ordinary doesn&apos;t live here. We craft the extraordinary, one bold idea at a time.&rdquo;
-        </p>
-      </div>
-
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.email || review.name} name={review.name} description={review.description} />
-        ))}
-      </Marquee> 
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.email || review.name} name={review.name} description={review.description} />
-        ))}
-      </Marquee>
-     
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#494949] dark:from-[#494949]"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#494949] dark:from-[#494949]"></div>
-      
-      <LogoCloud />
-    </div>
-  );
-};
-
-
 
 export default function About() {
 
@@ -260,23 +30,23 @@ export default function About() {
 
   return (
     <>
-      <section className="w-full bg-[#526855] py-32 px-8 sm:px-12 lg:px-16 relative overflow-hidden">
+      <section className="w-full bg-[#f7f2e6] py-32 px-8 sm:px-12 lg:px-16 relative overflow-hidden">
         {/* Refined background elements with reduced opacity */}
 
         {/* Header Section - Added more vertical spacing */}
         <div className="text-center max-w-4xl mx-auto relative z-10 mb-40">
         <div className="mb-12">
-          <span className="px-6 py-2 bg-[#526855] tracking-tight font-bold rounded-full text-sm text-[#f7f2e6] opacity-100 border border-gray-800 uppercase">
+          <span className="px-6 py-2 bg-[#f7f2e6] tracking-tight font-bold rounded-full text-sm text-[#526855] opacity-100 border border-gray-800 uppercase">
             Elevate Your Digital Presence
           </span>
         </div>
 
-        <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#f7f2e6] opacity-100 text-center">
+        <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#526855] opacity-100 text-center">
   Welcome to
-  <span className="block sm:inline text-[#f7f2e6]"> Social Moodboard</span>
+  <span className="block sm:inline text-[#526855]"> Social Moodboard</span>
 </h1>
 
-          <p className="text-[#f7f2e6] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
+          <p className="text-[#526855] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
             We craft bespoke social media strategies, visual identities, optimization solutions, and forward-thinking digital strategies that elevate your brand&apos;s presence.
           </p>
 
@@ -300,14 +70,13 @@ export default function About() {
         <Expertise />
 
         {/* Added Testimonial Section */}
-        <div className="w-full max-w-6xl mx-auto relative z-10 mb-40">
-         
-          <TestimonialSection />
+        <div className="w-full relative z-10 mb-40">
+          <Clients />
         </div>
 
         {/* Social Links Section - More elegant spacing */}
         <div className="pt-24 border-t border-gray-400 relative z-10">
-          <h2 className="text-2xl font-normal mb-16 text-center font-['Gilda_Display'] text-[#f7f2e6] opacity-100">
+          <h2 className="text-2xl font-normal mb-16 text-center font-['Gilda_Display'] text-[#526855] opacity-100">
             Connect With Us
           </h2>
 
@@ -318,7 +87,7 @@ export default function About() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-[#f7f2e6] opacity-40 hover:text-red-400 font-light transition-all duration-300 gap-2"
+                className="flex items-center text-[#526855] opacity-70 hover:text-red-400 font-light transition-all duration-300 gap-2"
               >
                 {item.icon}
                 <span>{item.title}</span>

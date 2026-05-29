@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import type { AppProps } from "next/app";
 import type { NextComponentType } from "next";
-
+import Head from "next/head";
 
 interface MyAppProps extends AppProps {
   Component: NextComponentType;
@@ -30,6 +30,9 @@ export default function App({
 
   return (
     <>
+      <Head>
+        <title>Slay The Strategy</title>
+      </Head>
       {!isMobile && <Navbar />}
       {isMobile && <MobileNav />}
       <AnimatePresence mode="wait">
