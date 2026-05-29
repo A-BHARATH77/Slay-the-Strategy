@@ -99,7 +99,7 @@ const services = [
 const nicheData = [
   {
     id: 1,
-    title: "Home Automation & Brands",
+    title: "Automation",
 
     imageUrl: "/i1.jpg"
   },
@@ -111,13 +111,13 @@ const nicheData = [
   },
   {
     id: 3,
-    title: "Building Solutions",
+    title: "Events",
 
     imageUrl: "/i3.jpg"
   },
   {
     id: 4,
-    title: "Salons",
+    title: "D2C",
 
     imageUrl: "/i4.jpg"
   },
@@ -129,9 +129,33 @@ const nicheData = [
   },
   {
     id: 6,
-    title: "Corporate Houses",
+    title: "Education",
 
     imageUrl: "/ch.png"
+  },
+  {
+    id: 7,
+    title: "Fashion",
+
+    imageUrl: "/i1.jpg"
+  },
+  {
+    id: 8,
+    title: "Technology",
+
+    imageUrl: "/i2.jpg"
+  },
+  {
+    id: 9,
+    title: "Corporate",
+
+    imageUrl: "/i3.jpg"
+  },
+  {
+    id: 10,
+    title: "Influencer",
+
+    imageUrl: "/i4.jpg"
   }
 ];
 
