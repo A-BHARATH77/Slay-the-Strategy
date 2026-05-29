@@ -34,7 +34,7 @@ export default function About() {
         {/* Refined background elements with reduced opacity */}
 
         {/* Header Section - Added more vertical spacing */}
-        <div className="text-center max-w-4xl mx-auto relative z-10 mb-40">
+        <div className="text-center max-w-4xl mx-auto relative z-10 mb-16">
         <div className="mb-12">
           <span className="px-6 py-2 bg-[#f7f2e6] tracking-tight font-bold rounded-full text-sm text-[#526855] opacity-100 border border-gray-800 uppercase">
             Elevate Your Digital Presence
@@ -42,9 +42,9 @@ export default function About() {
         </div>
 
         <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#526855] opacity-100 text-center">
-  Welcome to
-  <span className="block sm:inline text-[#526855]"> Social Moodboard</span>
-</h1>
+            Welcome to
+            <span className="block sm:inline text-[#526855]"> Social Moodboard</span>
+          </h1>
 
           <p className="text-[#526855] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
             We craft bespoke social media strategies, visual identities, optimization solutions, and forward-thinking digital strategies that elevate your brand&apos;s presence.
@@ -53,7 +53,7 @@ export default function About() {
           <div className="mt-16 flex flex-wrap justify-center gap-8">
             <Link
               href="/contact"
-              className="px-10 py-4 bg-gradient-to-r from-red-600 to-red-700 text-[#f7f2e6] font-light rounded-full hover:shadow-lg hover:translate-y-px transition-all duration-300 flex items-center gap-2 font-['Gilda_Display']"
+              className="px-10 py-4 bg-[#526855] text-[#f7f2e6] font-light rounded-full hover:shadow-lg hover:translate-y-px transition-all duration-300 flex items-center gap-2 font-['Gilda_Display']"
             >
               Start a Project <ChevronRight size={16} />
             </Link>
