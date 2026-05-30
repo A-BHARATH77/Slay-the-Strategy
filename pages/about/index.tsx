@@ -189,7 +189,7 @@ export default function About() {
               <div className="relative w-full h-full">
                 <iframe
                   ref={iframeRef}
-                  src="/about.html"
+                  src="/about-bg.html"
                   title="About Page"
                   className="w-full h-full border-none"
                   scrolling="no"
