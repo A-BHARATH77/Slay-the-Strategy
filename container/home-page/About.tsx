@@ -273,10 +273,10 @@ export default function About() {
 
       {/* Founder Section — image left, text right */}
       <div className="relative z-10 py-20">
-        <div className="max-w-6xl mx-auto px-6 flex flex-row items-center justify-center gap-20 lg:gap-28">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row lg:flex-row xl:flex-row items-center justify-center gap-10 md:gap-20 lg:gap-28 xl:gap-28">
 
           {/* Left — image */}
-          <div className="flex-shrink-0 w-80 lg:w-96">
+          <div className="flex-shrink-0 w-64 md:w-80 lg:w-96 xl:w-96">
             <img
               src="/founder.webp"
               alt="Dipani"
@@ -285,13 +285,13 @@ export default function About() {
           </div>
 
           {/* Right — text content */}
-          <div className="flex flex-col gap-6 max-w-xl">
+          <div className="flex flex-col gap-6 max-w-xl items-center text-center md:items-start md:text-left lg:items-start lg:text-left xl:items-start xl:text-left">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal font-['Gilda_Display'] text-[#526855] leading-tight">
               I am Dipani, a<br /><span className="italic">brand strategist</span>
             </h2>
 
             {/* Quote block with left border */}
-            <div className="border-l-4 border-[#526855] pl-5">
+            <div className="border-l-0 md:border-l-4 lg:border-l-4 xl:border-l-4 border-[#526855] pl-0 md:pl-5 lg:pl-5 xl:pl-5">
               <p className="text-[#526855] text-lg font-semibold font-['Gilda_Display'] leading-snug">
                 I build compelling social media presences that convert attention into unbreakable loyalty.
               </p>
@@ -303,7 +303,7 @@ export default function About() {
             </p>
 
             {/* Social links */}
-            <div className="flex flex-wrap gap-6 pt-2">
+            <div className="flex flex-wrap gap-6 pt-2 justify-center md:justify-start lg:justify-start xl:justify-start">
               {socialLinks.map((item) => (
                 <a
                   key={item.id}
@@ -338,7 +338,7 @@ export default function About() {
       </div>
 
       {/* Improved Grid Layout */}
-      <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
         {nicheData.map((niche) => (
           <div
             key={niche.id}

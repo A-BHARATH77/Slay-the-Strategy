@@ -51,13 +51,19 @@
     height: 100vh;
   }
   
-  /* Mobile Responsiveness - Simple scaled down version */
-  @media screen and (max-width: 767px) {
+  /* Mobile Responsiveness - 2 columns on phone */
+  @media screen and (max-width: 768px) {
     .gallery {
-      height: 175vh; /* Keep same proportions */
+      height: 175vh;
     }
     
     .column {
-      min-width: 100px; /* Allow columns to be narrower */
+      width: 50%;
+      min-width: unset;
+    }
+
+    .column:nth-of-type(3),
+    .column:nth-of-type(4) {
+      display: none;
     }
   }
