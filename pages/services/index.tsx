@@ -43,7 +43,7 @@ export default function About() {
 
         <h1 className="font-['Gilda_Display'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-12 tracking-tight leading-tight text-[#526855] opacity-100 text-center">
             Welcome to
-            <span className="block sm:inline text-[#526855]"> Social Moodboard</span>
+            <span className="block sm:inline text-[#526855]"> Slay The Strategy</span>
           </h1>
 
           <p className="text-[#526855] opacity-100 text-2xl max-w-2xl mx-auto font-light leading-relaxed mt-6 font-['Gilda_Display']">
@@ -70,7 +70,7 @@ export default function About() {
         <Expertise />
 
         {/* Added Testimonial Section */}
-        <div className="w-full relative z-10 mb-40">
+        <div className="relative z-10 mb-40 -mx-8 sm:-mx-12 lg:-mx-16">
           <Clients />
         </div>
 

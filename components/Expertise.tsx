@@ -11,7 +11,7 @@ const services = [
     title: "Social Media Strategy",
     description:
       "We craft bespoke social media strategies that connect with your audience through carefully curated visuals and purposeful messaging.",
-    tags: ["Content Creation", "Community Management", "Brand Voice", "Campaign Planning", "+more"],
+    tags: ["Content Creation", "Brand Voice","Community Management", "Campaign Planning"],
     image: "/social.webp",
     icon: Layers,
   },
@@ -21,7 +21,7 @@ const services = [
     title: "Brand Growth",
     description:
       "We design and execute growth strategies that transform your brand's digital presence, turning followers into loyal customers.",
-    tags: ["Audience Growth", "Engagement Strategy", "Analytics", "Paid Ads", "+more"],
+    tags: ["Audience Growth", "Engagement Strategy", "Analytics", "Paid Ads"],
     image: "/growth.webp",
     icon: Palette,
   },
@@ -31,7 +31,7 @@ const services = [
     title: "Digital Strategy",
     description:
       "We build forward-thinking digital strategies that elevate your brand and drive measurable results across every touchpoint.",
-    tags: ["Brand Positioning", "Market Research", "Competitor Analysis", "Roadmapping", "+more"],
+    tags: ["Brand Positioning", "Market Research", "Competitor Analysis", "Roadmapping"],
     image: "/strategy.webp",
     icon: Tag,
   },
@@ -41,7 +41,7 @@ const services = [
     title: "Visual Identity",
     description:
       "We create visual identities that define and elevate brands, ensuring they resonate with their audience through intentional design.",
-    tags: ["Logo Design", "Brand Guidelines", "Typography", "Color Systems", "+more"],
+    tags: ["Logo Design", "Brand Guidelines", "Typography", "Color Systems"],
     image: "/second.webp",
     icon: Globe,
   },
@@ -52,10 +52,10 @@ export default function Expertise() {
   const activeService = services.find((s) => s.id === activeTab)!;
 
   return (
-    <section className="py-20 px-4 md:px-8 max-w-[1100px] mx-auto">
+    <section className="py-20 px-1 md:px-8 max-w-[1100px] mx-auto">
 
       {/* ── Header (matches reference image) ── */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row md:items-end lg:items-end xl:items-end md:justify-between lg:justify-between xl:justify-between gap-8 mb-14">
         {/* Left: badge + big heading */}
         <div className="flex flex-col gap-4 max-w-[560px]">
           <div className="inline-flex">
@@ -70,23 +70,23 @@ export default function Expertise() {
         </div>
 
         {/* Right: description */}
-        <p className="text-[#526855]/60 text-base leading-relaxed font-['Gilda_Display'] max-w-[340px] md:text-right md:self-end">
+        <p className="text-[#526855]/60 text-base leading-relaxed font-['Gilda_Display'] max-w-[340px] md:text-right lg:text-right xl:text-right md:self-end lg:self-end xl:self-end">
           We offer focused services crafted with a structured approach, clear thinking, and attention to detail at every stage.
         </p>
       </div>
 
       {/* ── Main Card ── */}
       <div
-        className="bg-[#526855] border border-[#f7f2e6]/15 rounded-[32px] overflow-hidden flex"
-        style={{ height: "640px", boxShadow: "0 4px 40px rgba(81,104,86,0.10)" }}
+        className="bg-[#526855] border border-[#f7f2e6]/15 rounded-[32px] overflow-hidden flex flex-col md:flex-row lg:flex-row xl:flex-row h-auto md:h-[640px] lg:h-[640px] xl:h-[640px]"
+        style={{ boxShadow: "0 4px 40px rgba(81,104,86,0.10)" }}
       >
         {/* Left Sidebar */}
         <div
-          className="w-[240px] flex-shrink-0 flex flex-col justify-between p-5"
+          className="w-full md:w-[240px] lg:w-[240px] xl:w-[240px] flex-shrink-0 flex flex-col justify-between p-5"
           style={{ background: "rgba(247,242,230,0.06)" }}
         >
           {/* Nav Items */}
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2 md:gap-1 lg:gap-1 xl:gap-1 overflow-y-auto pr-2 md:pr-0 lg:pr-0 xl:pr-0">
             {services.map((service) => {
               const Icon = service.icon;
               const isActive = activeTab === service.id;
@@ -94,7 +94,7 @@ export default function Expertise() {
                 <button
                   key={service.id}
                   onClick={() => setActiveTab(service.id)}
-                  className={`flex items-center gap-2.5 px-3 py-3 rounded-xl text-left transition-all duration-200 ${
+                  className={`flex items-center flex-shrink-0 gap-2.5 px-3 py-3 rounded-xl text-left transition-all duration-200 ${
                     isActive
                       ? "bg-[#f7f2e6] text-[#526855] shadow-sm"
                       : "text-[#f7f2e6]/50 hover:bg-[#f7f2e6]/10 hover:text-[#f7f2e6]/80"
@@ -116,23 +116,10 @@ export default function Expertise() {
             })}
           </div>
 
-          {/* Bottom icon grid */}
-          <div className="mt-auto pt-6 flex flex-wrap gap-2">
-            {["SM", "GR", "ST", "VI", "BR", "MK", "CO", "+5"].map((label, i) => (
-              <div
-                key={i}
-                className="w-9 h-9 rounded-xl bg-[#526855] border border-[#f7f2e6]/15 flex items-center justify-center shadow-sm"
-              >
-                <span className="text-[10px] font-medium text-[#f7f2e6]/70 font-['Gilda_Display']">
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right Panel */}
-        <div className="flex-1 flex flex-col p-8 gap-5 overflow-hidden">
+        <div className="flex-1 flex flex-col p-5 md:p-8 lg:p-8 xl:p-8 gap-5 overflow-hidden min-h-[400px] md:min-h-0 lg:min-h-0 xl:min-h-0">
           {/* Title + Description + Tags */}
           <div className="flex flex-col gap-3 flex-shrink-0">
             <h3 className="text-3xl md:text-4xl font-normal leading-tight tracking-tight text-[#f7f2e6] font-['Gilda_Display']">
@@ -154,7 +141,7 @@ export default function Expertise() {
           </div>
 
           {/* Image — fills remaining height */}
-          <div className="flex-1 relative rounded-2xl overflow-hidden">
+          <div className="flex-1 relative rounded-2xl overflow-hidden min-h-[250px] md:min-h-0 lg:min-h-0 xl:min-h-0">
             <Image
               key={activeService.id}
               src={activeService.image}
