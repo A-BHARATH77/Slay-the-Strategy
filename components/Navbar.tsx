@@ -54,7 +54,7 @@ export default function Navbar() {
             return (
               <div key={item.id} className="flex justify-center pt-2">
                 <Link href="/" className="flex items-center">
-                  <div className="w-20 h-20 relative">
+                  <div className="w-14 h-20 relative">
                     <Image
                       src="/logo.webp"
                       alt="Logo"
