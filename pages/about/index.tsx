@@ -200,7 +200,7 @@ export default function About() {
                 />
               </div>
             </section>
-            
+
             {/* Main scrollable content with Locomotive Scroll */}
             <div data-scroll-container className="w-full">
               <div className="relative z-10 bg-[#f7f2e6] lg:py-32 overflow-hidden">
@@ -209,7 +209,7 @@ export default function About() {
                   <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-red-600 blur-3xl"></div>
                   <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-red-800 blur-3xl"></div>
                 </div>
-                
+
                 <div className="container mx-auto px-6 relative">
                   {/* About the Founder Section Header */}
                   <div className="relative z-10 bg-transparent pb-0 overflow-hidden mt-24">
@@ -341,7 +341,6 @@ export default function About() {
                   <h2 className="text-4xl md:text-5xl lg:text-7xl mb-16 text-center font-['Gilda_Display'] text-[#526855]">
                     Our Strategies <span className="text-[#526855] relative">
                       turnt brand into powerhouses
-                      <span className="absolute -bottom-2 left-0 w-full h-px bg-red-500 opacity-50"></span>
                     </span>
                   </h2>
                   <p className="mt-4 text-center text-base text-[#526855]/75 md:text-xl max-w-2xl">
